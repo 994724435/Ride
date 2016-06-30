@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+.m_center{
+	width: 800px;
+	margin: 0 22px 100px 22px;
+}
+.member_info{
+	width: 728px;
+	padding: 30px 35px;
+	margin-bottom: 10px;
+	border: 1px solid #d3d3d3;
+	background-color: #f1f1f1;
+}
+.member_info .info1{
+	width: 75px;
+	height: 75px;
+	padding: 3px;
+	border-radius: 50%;
+	border: 1px solid #d3d3d3;
+	background-color: #fff;
+}
+.member_info .info2{
+	font-size: 14px;
+	color: #666;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+.member_info .info2 p{
+	margin-bottom: 5px;
+}
+.member_info .info2 .progress{
+	width: 100px;
+	height: 8px;
+	background-color: #ccc;
+	position: relative;
+	margin: 7px 10px 0 0;
+}
+.member_info .info2 .progress span{
+	position: absolute;
+	width: 64%;
+	height: 8px;
+	left: 0;
+	top: 0;
+	background-color: #C7123A;
+}
+.member_info .info2 .progress + span{
+	font-size: 12px;
+	line-height: 22px;
+}
+.member_info .info3,
+.member_info .info4,
+.member_info .info5{
+	margin-left: 60px;
+}
+.member_info .info3 a,
+.member_info .info4 a,
+.member_info .info5 a{
+	display: block;
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+}
+.member_info .info3 a img,
+.member_info .info4 a img,
+.member_info .info5 a img{
+	margin: 5px auto;
+}
+.member_info .info3 a span,
+.member_info .info4 a span,
+.member_info .info5 a span{
+	color: #C7123A;
+	padding-left: 5px;
+	font-weight: bold;
+}
+.like_goods{
+	border: 1px solid #d3d3d3;
+	border-top: 0;
+}
+.like_goods .caption{
+	margin: 0 -1px;
+	height: 38px;
+	line-height: 38px;
+	padding-left: 10px;
+	color: #fff;
+	font-size: 14px;
+	background-color: #C7123A;
+}
+.like_goods ul{
+	padding-left: 25px;
+}
+.like_goods ul li{
+	margin-right: 25px;
+	margin-top: 25px;
+}
+.like_goods > a{
+	display: block;
+	height: 36px;
+	line-height: 36px;
+	margin: 25px;
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #d3d3d3;
+	background-color: #f5f5f5;
+}
+.like_goods > a span:before{
+	content: url(../images/icon26.png);
+	vertical-align: -2px;
+	margin-right: 20px;
+	margin-left: -20px;
+}
+.m_right{
+	width: 164px;
+	border: 1px solid #d3d3d3;
+	padding: 15px 10px;
+}
+.m_right p{
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 5px;
+}
+.m_right li{
+	margin: 3px;
+}

@@ -1,0 +1,45 @@
+<script>
+	var block_zIndex = 0;
+	var ms_zIndex = -1;
+	var blockName = ['changePassword_block','addAdmin_block','changePermissions_block','friendShip2_notice_block','setPermissions_block'];
+	block_zIndex = block_zIndex + 2;
+		ms_zIndex = ms_zIndex + 2;
+		for(var i = 0;i < blockName.length;i++){
+			if($(this).hasClass(blockName[i])){
+				$('.'+blockName[i]).fadeIn(188);
+				$('.'+blockName[i]).css('zIndex',block_zIndex);
+			}
+		}
+		if($('body .opacitybg').length > 0){
+			$('body .opacitybg').last().after("<div class='opacitybg'></div>");
+		}else{
+			// $('body').append("<div class='opacitybg'></div>");
+		};
+		$('body .opacitybg').last().css('zIndex',ms_zIndex);
+	});
+	$('.xx,.makesure,.cancle').click(function(){
+		$(this).parent().fadeOut(188);
+		$('body .opacitybg').last().remove();
+	});
+	/*	oQ=document.getElementById('quan'),
+	oN=document.getElementById('no'),
+	oF=document.getElementById('fan'),
+	oDiv=document.getElementById('check'),
+	aChk=oDiv.getElementsByTagName('input');
+	function xz(status1,status2){
+		for(var i=0;i<aChk.length;i++){
+			if(arguments.length==1){
+				aChk[i].checked=status1;
+			}else{
+				if(aChk[i].checked==status1){
+				aChk[i].checked=status2;
+				}else{
+					aChk[i].checked=status1;
+				};
+			};
+		};
+	};
+	oQ.onclick=function(){xz(true)};
+	oN.onclick=function(){xz(false)};
+	oF.onclick=function(){xz(true,false)};*/
+</script>

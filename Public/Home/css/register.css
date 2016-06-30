@@ -1,0 +1,150 @@
+
+body{
+	background-color: #f9f9f9;
+}
+.clear{clear:both;}
+.re_main{
+	margin-bottom: 150px;
+	border:1px solid #d3d3d3;
+	background-color: #fff;
+}
+.re_main .rm_top{
+	padding-top: 29px;
+	padding-bottom: 34px;
+}
+.re_main .rm_top h2{
+	margin-left: 530px;
+	font-size: 24px;
+	font-weight: bold;
+	color:#c7123a;
+	line-height: 24px;
+	float: left;
+}
+.re_main .rm_top p{
+	float: right;
+	margin-right: 22px;
+	color:#737373;
+	font-size:14px;
+	line-height: 24px;
+}
+.re_main .rm_top p a{
+	color:#e53c5f;
+	font-size:14px;
+	line-height: 24px;
+	float: right;
+}
+.res{
+	width: 420px;
+	margin: 0px auto;
+	height: 400px;
+}
+.resState{
+	width: 100%;
+	margin-bottom: 35px;
+	margin-left: 40px;
+}
+.resState img{
+	display: block;
+	width: 1121px;
+}
+.resLs{
+	float: left;
+	line-height: 38px;
+	font-size: 16px;
+	color: #737373;
+	width: 100px;
+	text-align: right;
+	font-style: normal;
+}
+.resBim{
+    width: 100%;
+	min-height: 65px;
+	margin: 0 auto;
+	position: relative;
+}
+.res1_icon,.res2_icon,.res3_icon{
+	 background: url(../images/login04.png) no-repeat;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 6px;
+	left: 107px;
+}
+.res2_icon{
+	background: url(../images/login04.png) no-repeat;
+	background-position: -24px;
+}
+.res3_icon{
+	background: url(../images/login04.png) no-repeat;
+	background-position:-48px;
+}
+.yanma{
+	width: 130px;
+	height: 34px;
+	line-height: 34px\9;
+	border: 1px solid #ddd;
+	color: #999;
+	outline:none;
+	float: left;
+	text-align: center;
+	font-family:"微软雅黑";
+}
+.yanPic{
+	float: left;
+	border:1px solid #c9c9c9;
+	margin-left: 10px;
+	margin-top: -3px;
+	width: 92px;
+	height: 41px;
+}
+.yanShua{
+	float: left;
+	line-height: 38px;
+	margin-left: 10px;
+	font-size: 12px;
+	color: #e53c5f;
+}
+.nextStep{
+	display: block;
+	width: 130px;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
+	color: #fff;
+	font-size: 16px;
+	box-shadow: 0px 2px 2px #ccc;
+	background: #e53c5f;
+	margin: 0 auto;
+	border-radius: 2px;
+}
+.res .msg_error{
+	padding-left: 100px
+}
+.userInput,.login_txt,.username,.userppwd,.useremail,.realname{
+	width: 280px;
+	height: 34px;
+	line-height: 34px;
+	border: 1px solid #ddd;
+	color: #999;
+	padding-left: 35px;
+	outline:none;
+	font-family:"微软雅黑";
+}
+.borR{
+	border:1px solid #ff9cb1
+}
+.msg_err {
+	background: url(../images/login02.png) no-repeat;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 6px;
+	right: -20px;
+	background-position: -25px -25px;
+}
+.msg_error {
+	color: #f69;
+	line-height: 26px;
+}

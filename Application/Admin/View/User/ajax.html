@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="__JS__jquery_1.8.3.js"></script>
+	<style type="text/css">
+	.current{
+		background: black;
+	}
+	</style>
+</head>
+<body>
+	<ul id="demo">
+		<li>wengdo</li>
+		<li>123</li>
+		<li>456</li>
+	</ul>
+	<div id="page_link">
+		<a href="javascript:;" class="current" data-page="1">1</a>
+		<a href="javascript:;" data-page="2">2</a>
+		<a href="javascript:;" data-page="3">3</a>
+	</div>
+	<script type="text/javascript">
+	$("#page_link a").click(function(){
+		$.post('/Admin/User/check',{page:$(this).attr('data-page')},function(data){
+			$('#page_link').empty().append(data.page_link);
+			$('#demo').empty();
+			for(i in data.news){
+				$('#demo').append('<li>'+data.news[i].title+'</li>');
+			}
+		},'json');
+	});
+	</script>
+</body>
+</html>

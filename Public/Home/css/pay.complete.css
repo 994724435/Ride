@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+.pay_complete{
+	padding: 70px 0;
+	text-align: center;
+	border: 1px solid #d3d3d3;
+	background-color: #f5f5f5;
+}
+.pay_complete p{
+	font-size: 20px;
+	color: #737373;
+	margin-bottom: 50px;
+}
+.pay_complete p:before{
+	content: url(../images/icon22.png);
+	vertical-align: -2px;
+	margin-right: 5px;
+}
+.pay_complete a{
+	display: inline-block;
+	width: 100px;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	background-color: #C7123A;
+}
+.pay_complete_tab{
+	width: 258px;
+	height: 28px;
+	border: 1px solid #fa3061;
+	margin: 40px auto;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.pay_complete_tab a{
+	width: 129px;
+	height: 28px;
+	color: #fa3061;
+	text-align: center;
+	line-height: 28px;
+	font-size: 14px;
+}
+.pay_complete_tab a.on{
+	color: #fff;
+	background-color: #fa3061;
+}
+.pay_complete_tab_block{
+	margin-bottom: 245px;
+}
+.pay_complete_tab_block ul{
+	display: none;
+}
+.pay_complete_tab_block ul:first-child{
+	display: block;
+}
+.pay_complete_tab_block ul li{
+	margin-left: 10px;
+}
+.pay_complete_tab_block ul li:first-child{
+	margin-left: 0;
+}

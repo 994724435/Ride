@@ -1,0 +1,54 @@
+
+<? if(is_array($threadlist)) { foreach($threadlist as $_thread) { ?>
+
+<div class="thread <?=$_thread['thread_class']?> <?=$_thread['top_class']?>" href="mobile/<?=$_thread['url']?>" tid="<?=$_thread['tid']?>" last_date="<?=$_thread['last_date']?>">
+	<table class="layout thread thread_<?=$_thread['agrees_class']?>">
+		<tr>
+			<td valign="top" width="40">
+				<a href="mobile/<?=$_thread['user_url']?>" class="author"><img src="<?=$_thread['user_avatar_url']?>" class="avatar" /></a>
+			</td>
+			<td>
+				<p class="subject">
+					<? if($_thread['top'] > 0) { ?><i class="icon top top_<?=$_thread['top']?>"></i><? } ?>
+					<a href="mobile/<?=$_thread['url']?><?=(!empty($keyword) ? '?keyword='.$keyword : '')?>" class="subject breakall"><?=$_thread['subject']?></a>
+					<? if($_thread['files'] > 0) { ?><i class="icon small filetype other"></i><? } ?>
+					
+					<i class="icon small newpost yellow" title="有新回复"></i>
+				</p>
+				<table class="layout">
+					<tr>
+						<td class="grey small">
+							<? if(!$fid) { ?>
+							<a href="mobile/forum-<?=$_thread['fid']?>.htm" class="forumname"><span class="forumname"><?=$_thread['forumname']?></span></a>	&nbsp;•&nbsp; 
+							<? } ?>
+							
+							<!--
+							<a href="mobile/<?=$_thread['user_url']?>" class="author"><?=$_thread['username']?></a> &nbsp;
+							<span class="date"><?=$_thread['create_date_fmt']?></span> &nbsp; •
+							-->
+							
+							<? if($_thread['last_date']) { ?>
+							 &nbsp;
+							<a href="mobile/user-<?=$_thread['lastuid']?>.htm" class="lastusername"><?=$_thread['lastusername']?></a> &nbsp;
+							<span class="date"><?=$_thread['last_date_fmt']?></span>
+							<? } ?>
+						</td>
+						<td width="20%" align="right">
+							<? if(!empty($order) && $order == 'agrees') { ?>
+							<span class="agrees <?=$_thread['agrees_class']?>" title="被赞次数"><?=$_thread['agrees']?></span>&nbsp; 
+							<? } else { ?>
+							<span class="posts <?=$_thread['posts_class']?>" title="回复次数"><?=$_thread['posts']?></span>&nbsp; 
+							<? } ?>
+							
+							<? if(forum_access_mod($_thread['fid'], $gid, 'allowtop')) { ?>
+							<input type="checkbox" name="tid" value="<?=$_thread['tid']?>" style="vertical-align: middle;" />
+							<? } ?>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<? } } ?>

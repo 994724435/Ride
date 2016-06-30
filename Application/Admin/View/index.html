@@ -1,0 +1,352 @@
+<include file="Common/header" />
+<div class="rightfix">
+  <a class="home"></a>
+  <div style="width:1044px; margin-left:20px;">
+    <div class="info">
+      <div class="photo"></div>
+      <div class="weltxt">
+        <p class="p1">欢迎您<span>{$current_admin.admin_relname}</span>登录后台管理系统！</p>
+        <if condition="$current_admin['admin_level'] eq 1">
+            <p class="p2">您是超级管理员</p>
+        <else /><p class="p2">您是普通管理员</p>
+        </if>
+      </div>
+    </div>
+    <div class="change">
+      <div class="youcan">您可以：</div>
+      <if condition="$current_admin['admin_level'] eq 1">
+      <div class="circle" id="ch_pa2">修改账号密码</div><div class="circle" id="addadmin2">添加管理员</div><div class="circle" id="setpower2">设置权限</div><div class="circle" id="logout2">退出系统</div>
+      <else /><div class="circle" id="ch_pa2">修改账号密码</div><div class="circle" id="logout2">退出系统</div>
+      </if>
+    </div>
+  </div>
+  <div class="longbox">
+    <p>走到这里，您可以：</p><a>开启您的后台管理之路</a>
+  </div>
+</div>
+
+<div class="clear"></div>
+
+<div class="bottom">声明：系统开发版权归重庆艾斯顿文化传媒有限公司所有，翻版必究</div>
+
+<!--透黑背景-->
+<div class="opacitybg"></div>
+<div class="opacitybg2"></div>
+
+<!--退出弹框-->
+<script type="text/javascript">
+$(function(){
+  $("#logout1,#logout2").click(
+    function(){
+	  $(".opacitybg").fadeIn(500);
+	  $(".logout").fadeIn(500);
+    }
+  );
+});
+
+$(function(){
+  $("#tuichu1,#tuichu2,#tuichu3").click(
+    function(){
+	  $(".opacitybg").fadeOut(500);
+	  $(".logout").fadeOut(500);
+    }
+  );
+});
+</script>
+<div class="logout">
+  <div class="xx" id="tuichu1"></div>
+  <p class="tishi">友情提示</p>
+  <p class="tishi1">您将要退出系统吗？确定继续退出吗？</p>
+  <a class="makesure" id="tuichu2" href="{:U('/Admin/User/loginOut')}">确定退出</a><a class="cancle" id="tuichu3">取消</a>
+</div>
+
+<!--修改密码弹框-->
+<script type="text/javascript">
+$(function(){
+  $("#ch_pa1,#ch_pa2").click(
+    function(){
+	  $(".opacitybg").fadeIn(500);
+	  $(".changepassword").fadeIn(500);
+    }
+  );
+});
+
+$(function(){
+  $("#tuichu4,#tuichu5,#tuichu6").click(
+    function(){
+	  $(".opacitybg").fadeOut(500);
+	  $(".changepassword").fadeOut(500);
+    }
+  );
+});
+</script>
+<div class="changepassword">
+  <div class="xx" id="tuichu4"></div>
+  <p class="tishi">修改帐号密码</p>
+  <form action="{:U('Admin/Index/change')}" method="post">
+    <div class="inputkuang">帐号名称：<input name="change_user" type="text" value="" id="account" /><span id="msg"></span></div>
+    <div class="inputkuang">请输入现在的密码：<input name="name" type="password" value="" id="psd0" /><span id="msg0"></span></div>
+    <div class="inputkuang">请输入新的密码：<input name="new_pswd" type="password" value="" id="psd1" /><span id="msg1"></span></div>
+    <div class="inputkuang">请再次输入新的密码：<input name="name" type="password" value="" id="psd2" /><span id="msg2"></span></div>
+    <input type="submit" value="确定退出" class="makesure" id="tuichu5"><a class="cancle" id="tuichu6">取消</a>
+  <!-- <a class="makesure" id="tuichu5">确定退出</a> -->
+  </form>
+</div>
+<script>
+  $('#account').blur(function(){
+    var account = $(this).val();
+    $.post('account_ajax',{'account':account},function(num){
+      if(num == 0){
+        $('#msg').text('用户名不存在');
+      }else{
+        $('#msg').empty();
+      }
+    },'json');
+    $('#psd0').blur(function(){
+      var psd0 = $(this).val();
+      $.post('ajax',{'psd':psd0,'acc':account},function(data){
+        if(data == 0){
+          $('#msg0').text('密码错误');
+        }else{
+          $('#msg0').empty();
+        }
+      },'json');
+    })
+  })
+  $('#psd1').keyup(function(){
+    var psd1 = $(this).val();
+    var len1 = psd1.length;
+    if(len1 < 6){
+      $('#msg1').text('密码太短');
+    }else{
+      $('#msg1').empty();
+    }
+  })
+  $('#psd2').keyup(function(){
+    var psd2 = $(this).val();
+    var len2 = psd2.length;
+    if(len2 < 6){
+      $('#msg2').text('密码太短');
+    }else{
+      $('#msg2').empty();
+    }
+  })
+  $('#psd2').blur(function(){
+    var psd1 = $('#psd1').val();
+    var psd2 = $('#psd2').val();
+    if(psd1 != psd2){
+      $('#msg2').text('密码不同');
+    }
+  })
+</script>
+
+
+<!--没有权限弹框-->
+<script type="text/javascript">
+$(function(){
+  $("#setpower1").click(
+    function(){
+	  $(".opacitybg").fadeIn(500);
+	  $(".nopower").fadeIn(500);
+    }
+  );
+});
+
+$(function(){
+  $("#tuichu7").click(
+    function(){
+	  $(".opacitybg").fadeOut(500);
+	  $(".nopower").fadeOut(500);
+    }
+  );
+});
+</script>
+<div class="nopower">
+  <div class="xx" id="tuichu7"></div>
+  <p class="tishi">友情提示</p>
+  <div class="cry">
+    <p class="p1">很遗憾，您没有该权限！</p>
+    <p class="p2">如有需要请联系超级管理员开通！！</p>
+  </div>
+</div>
+
+<!--修改权限弹框-->
+<script type="text/javascript">
+$(function(){
+  $("#setpower2").click(
+    function(){
+	  $(".opacitybg").fadeIn(500);
+	  $(".changepower").fadeIn(500);
+    }
+  );
+});
+
+$(function(){
+  $("#tuichu8,#tuichu9,#tuichu10").click(
+    function(){
+	  $(".opacitybg").fadeOut(500);
+	  $(".changepower").fadeOut(500);
+    }
+  );
+});
+</script>
+
+<!-- 权限设置开始 -->
+<div class="changepower">
+  <div class="xx" id="tuichu8"></div>
+  <p class="tishi">设置权限</p>
+  <p class="adminlist">管理员列表</p>
+  <div class="greykuang1"><input type="checkbox" />全选</div><div class="greykuang2">账号</div><div class="greykuang3">称号</div><div class="greykuang4">操作</div>
+
+  <foreach name="admin_user" item="val" >
+  <div class="bkuang1"><input style="margin-left:-28px;" type="checkbox" /></div><div class="bkuang2">{$val.admin_username}</div><div class="bkuang3"><if condition="$val['admin_level']==1" >超级管理员<else />管理员</if></div><div class="bkuang4"><a class="a1" href="{:U('/Admin/User/del','admin_id='.$val['admin_id'])}">删除</a> /  <a class="a2">权限设置</a> /  <a class="a3">修改资料</a></div>
+  </foreach>
+  
+  <div class="clear"></div>
+  <a class="deleteall">删除所选</a><a class="listtip" style="margin-left:44px;">首页</a><a class="listtip">上一页</a><a class="listnum">1</a><a class="listnum">2</a><a class="listnum">3</a><span class="listspan">...</span><a class="listnum">12</a><a class="listtip">末页</a>
+  <div class="clear"></div>
+  <a class="cancle" id="tuichu10">取消修改</a><a class="makesure" id="tuichu9">保存修改</a>
+</div>
+<!-- 权限设置结束 -->
+
+<!--修改权限弹框下的设置权限-->
+<script type="text/javascript">
+$(function(){
+  $(".a2").click(
+    function(){
+	  $(".opacitybg2").fadeIn(500);
+	  $(".changepower2").fadeIn(500);
+    }
+  );
+});
+
+$(function(){
+  $("#tuichu11,#tuichu12,#tuichu13").click(
+    function(){
+	  $(".opacitybg2").fadeOut(500);
+	  $(".changepower2").fadeOut(500);
+    }
+  );
+});
+
+$(function(){
+  $(".bkuang2").click(
+    function(){
+	  $(this).next('ul').finish();
+	  $(this).css("color","#15837e");
+	  $(this).siblings(".bkuang2").css("color","#767676");
+	  $(this).next('ul').siblings('ul').slideUp(500);
+	  $(this).next('ul').slideDown(500);
+    }
+  );
+});
+</script>
+<div class="changepower2">
+  <div class="xx" id="tuichu11"></div>
+  <p class="tishi">设置权限</p>
+  <p class="setting">管理员列表<span>账户：admin2</span><span>称呼：管理员</span></p>
+  <div class="greykuang1"><input type="checkbox" />全选</div><div class="greykuang2">网站栏目</div>
+  <div class="scrollkuang">
+
+    <form action="" method="post">
+    <foreach name='n_nav' item="val" >
+    <div class="bkuang1"><input type="checkbox"/></div><div class="bkuang2">{$val.nav_name}<span>&gt;</span></div>
+    <ul class="setslide">
+      <foreach name="val.sid" item='value' >
+      <li class="setslidedown" style="background-image:url(__IMAGES__set_up.jpg); background-position:center top; background-repeat:no-repeat;"><input type="checkbox" style="margin-right:15px;" />{$value.nav_name}</li>
+      </foreach>
+    </ul>
+    </foreach>
+    </form>
+
+  </div>
+  <input type="submit" value="保存修改" class="makesure" id="tuichu12"><a class="cancle" id="tuichu13">返回上一步</a>
+</div>
+
+<!--添加管理员-->
+<script type="text/javascript">
+
+$('#tuichu12').click(function(){
+  
+})
+
+$(function(){
+  $("#addadmin1,#addadmin2").click(
+    function(){
+	  $(".opacitybg").fadeIn(500);
+	  $(".addadmin").fadeIn(500);
+    }
+  );
+});
+
+
+$(function(){
+  $(".next").click(
+    function(){
+	  $(".opacitybg2").fadeIn(500);
+	  $(".changepower2").fadeIn(500);
+    }
+  );
+});
+
+$(function(){
+  $("#tuichu14").click(
+    function(){
+	  $(".opacitybg").fadeOut(500);
+	  $(".addadmin").fadeOut(500);
+    }
+  );
+});
+</script>
+<div class="addadmin">
+  <div class="xx" id="tuichu14"></div>
+  <p class="tishi">添加管理员</p>
+  <div class="inputkuang">帐号名称：<input name="name" type="text" value="" id="acc" /><span id="msg3"></span></div>
+  <div class="inputkuang">设置密码：<input name="name" type="password" value="" id="psd3" /><span id="msg4"></span></div>
+  <div class="inputkuang">确认密码：<input name="name" type="password" value="" id="psd4" /><span id="msg5"></span></div>
+  <a class="next" id="next">下一步</a>
+</div>
+<script>
+  if(!$('#acc').val() && $('#msg4').val() && $('#msg5').val()){
+    $('#next').click(function(){
+      return false;
+    })
+  }
+   $('#acc').blur(function(){
+    var acc = $(this).val();
+    $.post('acc_ajax',{'acc':acc},function(num){
+      if(num == 1){
+        $('#msg3').text('用户名已存在');
+      }else{
+        $('#msg3').empty();
+      }
+    },'json');
+  });
+   $('#psd4').blur(function(){
+      var psd3 = $('#psd3').val();
+      var psd4 = $('#psd4').val();
+      if(psd3 != psd4){
+        $('#msg5').text('密码不同');
+      }
+    });
+   $('#psd3').keyup(function(){
+    var psd3 = $(this).val();
+    var len3 = psd3.length;
+    if(len3 < 6){
+      $('#msg4').text('密码太短');
+    }else{
+      $('#msg4').empty();
+    }
+  });
+  $('#psd4').keyup(function(){
+    var psd4 = $(this).val();
+    var len4 = psd4.length;
+    if(len4 < 6){
+      $('#msg5').text('密码太短');
+    }else{
+      $('#msg5').empty();
+    }
+  });
+</script>
+</body>
+</html>

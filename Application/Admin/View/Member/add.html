@@ -1,0 +1,268 @@
+<include file="Common/header" />
+<script type="text/javascript" src="__JS__jquery-1.11.3.min.js"></script>
+<script src="__JS__laydate.js"></script>
+<link rel="stylesheet" href="__CSS__cssMember.css" type="text/css">
+<script type="text/javascript">
+$(function(){
+  $("#tip1").mouseover(
+    function(){
+	  $(".set").finish();
+	  $(".set").slideDown(500);
+    }
+  );
+});
+
+$(function(){
+  $(".set").mouseleave(
+    function(){
+	  $(".set").finish();
+	  $(".set").show().delay(1000).slideUp(500);
+    }
+  );
+});
+
+$(document).ready(function(){
+  var l = $(window).width()-218;
+    $(".rightfix").css("width",l);
+	$(window).resize(function(){
+		$(".rightfix").css("width",$(window).width()-218);
+	});
+  var h = $(window).height()-105;
+    $(".rightfix").css("height",h);
+	$(window).resize(function(){
+		$(".rightfix").css("height",$(window).height()-105);
+	});
+});
+
+// $(function(){
+//   $(".step").click(
+//     function(){
+// 	  $(this).next('div').finish();
+// 	  $(this).toggleClass("stepclick");
+// 	  $(this).parent().siblings('div').children('ul').slideUp(500);
+// 	  $(this).parent().siblings('div').children('p').removeClass("stepclick");
+// 	  $(this).next('ul').slideToggle(500);
+//     }
+//   );
+// });
+//删除当行
+function delect_lo(){
+	$(".delet_row").click(function(){
+		$(this).parents(".menber_row").remove();
+	})
+}
+//选中所有
+function all_choose(){
+	$(".allchoose").change(function(){
+		if($(this).is(":checked")){
+			$(".choose_zi").each(function(index,element){
+				$(element).prop("checked","checked");
+			})
+		}else{
+				$(".choose_zi").each(function(index,element){
+				$(element).prop("checked",false);
+			})
+		}
+	})
+}
+function delete_choose(){
+	$(".delet_xuan").click(function(){
+		$(".choose_zi").each(function(index,element){
+			if($(element).is(":checked")){
+				$(element).parents(".menber_row").remove();
+			}
+		})
+	})
+}
+function stop_use(){
+	$(".stop_use").click(function(){
+		$(this).parents(".menber_row").css("color","#d0d0d0");
+		$(this).text("已停用");
+	});
+}
+
+//确认修改
+function ensure_change(){
+	$(".check_sub").click(function(){
+		$(this).parents(".check_data_bg").remove();
+	})
+}
+</script>
+
+<div class="rightfix">
+  <a class="home1"></a><a class="home_pass">会员管理</a><a class="home_now">添加会员</a>
+  <div class="clear"></div>
+  <div class="add_huiyuan">
+  	<div class="huiyuan_tishi">
+  		备注：带<span class="qiangdiao">“*”</span>为必填项，请认真核对信息后再提交
+  	</div>
+  	<form action="" method="post">
+      <div class="huiyuan_row"><div class="huiyuan_col1 f"><label class="bitian">*</label>会员账号:</div><div class="huiyuan_col2 f"><input type="text" name="vip_account" class="h_text"  onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入6到16个字符" maxlength="16" /></div><span class="error"></span></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f"><label class="bitian">*</label>用户名:</div><div class="huiyuan_col2 f"><input type="text" name="vip_user" class="h_text"  placeholder="请输入6到16个字符" maxlength="16"/></div><span class="error"></span></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f" maxlength="16"><label class="bitian">*</label>登陆密码:</div><div class="huiyuan_col2 f"><input type="password" name="vip_pswd1" class="h_text" placeholder="请输入6到16个字符"/></div><span class="error"></span></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f"><label class="bitian">*</label>确认密码:</div><div class="huiyuan_col2 f"><input type="password" name="vip_pswd2" class="h_text" placeholder="请输入6到16个字符" maxlength="16"/></div><span class="error"></span></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">姓名:</div><div class="huiyuan_col2 f"><input type="text" name="vip_relname" class="h_text" placeholder="请输入4到8个字符" maxlength="8"/></div></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">联系电话:</div><div class="huiyuan_col2 f"><input type="text" placeholder="请输入正确的手机号码" onkeyup='this.value=this.value.replace(/\D/gi,"")' name="vip_tel" class="h_text" maxlength="11"/></div></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">邮箱地址:</div><div class="huiyuan_col2 f"><input type="text" placeholder="请输入正确的邮箱" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" name="vip_mail" class="h_text"/></div></div>
+      <div class="huiyuan_row">
+        <div class="huiyuan_col1 f">性别:</div>
+        <div class="huiyuan_col2 f">
+        <input type="radio" class="huiyuan_radio huiyuan_m f" name="vip_sex" value="1"/>
+        <label class="f">男</label>
+        <input type="radio" class="huiyuan_radio huiyuan_w f" name="vip_sex" value="0"/>
+        <label class="f">女</label>
+      </div>
+      </div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">出生日期:</div><div class="huiyuan_col2 f demo1"><input class="laydate-icon" id="demo" name="vip_birthday" placeholder="时间选择器"></div></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">国家:</div><div class="huiyuan_col2 f"><input type="text" name="vip_country" class="h_text"/></div></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">居住地址:</div><div class="huiyuan_col2 f"><input type="text" name="vip_address" class="h_text"/></div></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">邮编地址:</div><div class="huiyuan_col2 f"><input type="text" name="vip_zipCode" class="h_text"/></div></div>
+      <div class="huiyuan_row"><div class="huiyuan_col1 f">固定电话:</div><div class="huiyuan_col2 f"><input type="text" name="vip_fixedTel" class="h_text"/></div></div>
+      <div class="ensure_add"><input type="submit" value="" class="submit" style="width:119px;height:35px;background:url(__IMAGES__vipadd.png)"></div> 
+    </form>
+  </div>
+</div>
+
+
+<div class="clear"></div>
+<!-- 权限判断 -->
+<input type="hidden" name="power" value="{$current_admin.admin_power}">
+<div class="bottom">声明：系统开发版权归重庆艾斯顿文化传媒有限公司所有，翻版必究</div>
+<include file="Common/alert" />
+<script type="text/javascript">
+	var adm_power = $("input[name='power']").val();
+    if(adm_power.indexOf('会员列表') === -1){
+    	$('.submit').addClass('friendShip1_notice_block show_block').attr('type','button');
+    }
+	!function(){
+		laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+		laydate({elem: '#demo'});//绑定元素
+	}();
+	function DropDown(el) {
+	this.dd = el;
+	this.placeholder = this.dd.children('span');
+	this.opts = this.dd.find('ul.dropdown > li');
+	this.val = '';
+	this.index = -1;
+	this.initEvents();
+	}
+	DropDown.prototype = {
+	initEvents : function() {
+		var obj = this;
+		
+		obj.dd.on('click', function(event){
+		$(this).toggleClass('active');
+		return false;
+		});
+		
+		obj.opts.on('click',function(){
+		var opt = $(this);
+		obj.val = opt.text();
+		obj.index = opt.index();
+		obj.placeholder.text(obj.val);
+		});
+		},
+		getValue : function() {
+		return this.val;
+		},
+		getIndex : function() {
+		return this.index;
+		}
+	}
+	
+	var dd = new DropDown( $('#dd') );
+	
+	$(document).click(function() {
+	// all dropdowns
+	$('.wrapper-dropdown-3').removeClass('active');
+	});
+	
+	
+  $(".aa1").click(
+    function(){
+	  $(this).css("display","none");
+	  $(this).next().css("display","inline-block");
+    }
+  );
+
+  $(".aa4").click(
+    function(){
+	  $(this).css("display","none");
+	  $(this).prev().css("display","inline-block");
+    }
+  );
+
+$("#allbox1").click(function(){    
+    if (this.checked){
+		$(".rightfix :checkbox").each(function(){
+			this.checked=true;
+		});
+	}else{
+		$(".rightfix :checkbox").each(function(){
+			this.checked=false;
+		});
+	}
+});
+$('input[name="vip_user"]').blur(function(){
+  var user = $(this).val();
+  if(user.length<6){
+     $('input[name="vip_user"]').parent().next().text('*请输入6到16个字符');
+  }else{
+    $.post('/Admin/Member/user',{'user':user},function(data){
+      if(data!=''){
+        $('input[name="vip_user"]').parent().next().text('*用户名已存在');
+      }else{
+        $('input[name="vip_user"]').parent().next().text('');
+      }
+    },'json');
+  }
+})
+$('input[name="vip_account"]').blur(function(){
+  	var account = $(this).val();
+  	if(account.length<6){
+     	$('input[name="vip_account"]').parent().next().text('*请输入6到16个字符');
+  	}else{
+    	$.post('/Admin/Member/account',{'account':account},function(data){
+	      	if(data!=''){
+	        	$('input[name="vip_account"]').parent().next().text('*账号已存在');
+	      	}else{
+	        	$('input[name="vip_account"]').parent().next().text('');
+	      	}
+    	},'json');
+  	}
+})
+$('input[name="vip_pswd1"]').blur(function(){
+  var pswd1 = $(this).val();
+  var pswd2 = $('input[name="vip_pswd2"]').val();
+  if(pswd1.length>=6){
+    $(this).parent().next().text('');
+  }else{
+    $(this).parent().next().text('*请输入6到16个字符');
+  }
+  if(pswd1!=pswd2 && pswd2!=''){
+    $('input[name="vip_pswd2"]').parent().next().text('*密码输入不一致');
+  }
+})
+$('input[name="vip_pswd2"]').blur(function(){
+  var pswd1 = $('input[name="vip_pswd1"]').val();
+  var pswd2 = $(this).val();
+  if(pswd1!=pswd2){
+    $(this).parent().next().text('*密码输入不一致');
+  }else{
+    $(this).parent().next().text('');
+  }
+})
+$('.submit').click(function(){
+	var user = $('input[name="vip_user"]').val();
+	var error = $('input[name="vip_user"]').parent().next().text();
+	var pswd1 = $('input[name="vip_pswd1"]').val();
+	var pswd2 = $('input[name="vip_pswd2"]').val();
+	
+})
+$('#demo').blur(function(){
+	var birth = $(this).val();
+})
+</script>
+<include file="Common/alert" />
+</body>
+</html>

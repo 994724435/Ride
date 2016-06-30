@@ -1,0 +1,123 @@
+<include file="Common/header" />
+<script type="text/javascript" src="__JS__lanrenzhijia.js" ></script>
+<script type="text/javascript" src="__JS__zyUpload.js" ></script>
+<script type="text/javascript" src="__JS__zyFile.js" ></script>
+<link rel="stylesheet" href="__CSS__zyUpload.css" />
+<style>
+  #preview{width:289px;height:93px;border:1px solid #cfcfcf;overflow:hidden;text-align: center;}
+  #imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);width:114px;height:104px;margin-top: 0;}
+  .fileimg input{
+    width: 100%;
+    height: 55px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+</style>
+<div class="rightfix">
+  <a class="home1"></a><a class="home_pass">产品管理</a><a class="home_now">添加产品</a>
+  <div class="clear"></div>
+ 	<div class="article_edit_list" style="width:1086px ;">
+ 		<form action="{:U('/Admin/Product/editor',array('aid'=>$aid))}" method='post' enctype="multipart/form-data">
+    <div class="article_edit_list">
+      <!-- 产品名称 -->    
+      <div class="edit_title"><div class="col_left f">产品名</div><div class="col_right f"><input type="text" name="title" class="title_text" value="{$pro.pro_name}"/></div><div class="clear"></div></div> <div class="clear"></div>
+      <!-- 产品分类 -->
+      <div class="choose_sort same_height"> <div class="col_left f">选择分类</div> <div class="col_right f"> <select class="sort f" name="cate" id="cate"> <option value="" >未分类</option> <foreach name="cate" item="value"> <option value="{$value.cate_id}" <?php if($pid == 0){if($pro['pro_cate_id'] == $value['cate_id']){echo "selected=selected" ;}}else{if($pid==$value['cate_id']){echo "selected=selected" ;}} ?>>{$value.cate_name}</option> </foreach> </select> <select class="sort f" name="scate" id="scate" style="margin-left:25px;"> <option value="" <?php if($pro['pro_cate_id'] != $val['cate_id']){echo "selected=selected";} ?>>未分类</option> <foreach name="scate" item="val"> <option value="{$val.cate_id}" <?php if($pro['pro_cate_id'] == $val['cate_id']){echo "selected=selected";} ?>>{$val.cate_name}</option> </foreach> </select> <div class="f"><input type="text" class="newsort" style="width:120px;"><label class="newsorttext">新建分类</label></div> <div class="clear"></div> </div> </div> <div class="clear"></div>
+      <!-- 产品缩略图 -->
+      <div class="thumbnail"> <div class="col_left f">缩略图</div> <div class="col_right f"> <div class="img_containner f"> <img id="imghead" src='<%=request.getContextPath()%>/images/defaul.jpg'> <img src='__IMAGES__thumbnail_close.png' class='thumbnail_close'> </div> <div class="add_img_c"> <div class="fileimg"><input type="file" onchange="previewImage(this)" name="thumb"/></div> </div> </div> <div class="clear"></div> </div> <div class="clear"></div>
+      <!-- 产品是否显示 -->
+      <div class="submit_person same_height"><div class="col_left f">是否显示</div><div class="col_right f"><if condition="$pro['pro_isshow'] eq 1"><input type="radio" name="isshow" value="1" id="" checked='checked'>显示<input type="radio" name="isshow" id="" value="0">不显示<else /><input type="radio" name="isshow" value="1" id="">显示<input type="radio" name="isshow" value="0" checked='checked' id="">不显示</if></div><div class="clear"></div></div> <div class="clear"></div>
+      <!-- 产品上架时间 -->
+      <div class="public same_height"><div class="col_left f">上架时间</div><div class="col_right f"><input type="text" name="time" class="title_text" readonly="true" value="{$pro.pro_addtime|date="Y-m-d",###}" /></div><div class="clear"></div></div> <div class="clear"></div>
+      <!-- 产品来源 -->
+      <div class="source same_height"><div class="col_left f">来源</div><div class="col_right f"><input type="text" class="title_text" name="source" value="{$pro.pro_from}" /></div><div class="clear"></div></div> <div class="clear"></div>
+      <!-- 产品价格 -->
+      <div class="public same_height"><div class="col_left f">销售价格</div><div class="col_right f"><input type="text" value="{$pro.pro_general_price}" name="general_price" class="sale_price"/><label class="price_lab">会员价格</label><input type="text" value="{$pro.pro_member_price}" name="member_price" class="sale_price"/></div><div class="clear"></div></div> <div class="clear"></div>
+      <!-- 产品简介 -->
+      <div class="digest same_height"><div class="col_left f">摘要</div><div class="col_right f"><input type="text" name="summary" value="{$pro.pro_summary}" class="title_text Summary" /></div> </div><div class="clear"></div>
+      <!-- 产品详细介绍 -->
+      <div class="article_detail"><div class="col_left f d_bottom">产品介绍</div><div class="col_right f d_bottom"><div class="detail_edit"> <?php echo $htmlData; ?> <textarea name="content1" class="textarea">{$pro.pro_introduction}<?php echo htmlspecialchars($htmlData); ?></textarea> </div></div></div> <div class="clear"></div>
+      <!-- 提交或者取消 -->
+      <div class="cancle_save"><input type="submit" class="article_submit button_big" value=""/> <input type="button" class="article_cancel button_big" value=""/></div> <div class="clear"></div>
+
+      </div>
+     </form>
+     <div class="clear"></div>
+  </div>
+<div class="clear"></div>
+<!--添加缩略图js-->
+<script type="text/javascript">
+//缩略图预览
+function previewImage(file){
+  var MAXWIDTH  = 117; 
+  var MAXHEIGHT = 120;
+  var div = document.getElementById('preview');
+  if (file.files && file.files[0]){
+    div.innerHTML ='<img id=imghead>';
+    var img = document.getElementById('imghead');
+    img.onload = function(){
+      var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+      img.width  =  rect.width;
+      img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+      // img.style.marginTop = rect.top+'px';
+    }
+    var reader = new FileReader();
+    reader.onload = function(evt){img.src = evt.target.result;}
+    reader.readAsDataURL(file.files[0]);
+  }else{  //兼容IE
+    var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+    file.select();
+    var src = document.selection.createRange().text;
+    div.innerHTML = '<img id=imghead>';
+    var img = document.getElementById('imghead');
+    img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+    var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+    status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+    div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+  }
+}
+function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+  var param = {top:0, left:0, width:width, height:height};
+  if( width>maxWidth || height>maxHeight ){ 
+    rateWidth = width / maxWidth;
+    rateHeight = height / maxHeight;
+    if( rateWidth > rateHeight ){
+      param.width =  maxWidth;
+      param.height = Math.round(height / rateWidth);
+    }else{
+      param.width = Math.round(width / rateHeight);
+      param.height = maxHeight;
+    }
+  } 
+  param.left = Math.round((maxWidth - param.width) / 2);
+  param.top = Math.round((maxHeight - param.height) / 2);
+  return param;
+} 
+
+
+
+$(function(){
+  remove_thumbnail();
+})
+function remove_thumbnail(){
+  $(".thumbnail_close").click(function(){
+    $(this).parent().remove();
+    })
+}
+$(".article_cancel").click(function(){
+    window.history.go(-1);
+});
+
+//分类AJAX
+$("#cate").change(function(){var pid=$(this).val(); if(pid){$.post('/Admin/Product/cateAjax',{'pid':pid},function(data){$('#scate').empty().append('<option value="">未分类</option>'); for(i in data){$('#scate').append("<option value='"+data[i]['cate_id']+"'>"+data[i]['cate_name']+"</option>"); } },'json'); }else{$('#scate').empty().append('<option value="">未分类</option>'); } });
+
+//新建分类
+$(".newsorttext").click(function(){var sort = $(".newsort").val(); var cid = $("#cate").val(); $.post('/Admin/Product/sortAjax',{'sort':sort,'cid':cid},function(data){if(!cid){$('#cate').empty().append('<option value="">未分类</option>'); $('#scate').empty().append('<option value="">未分类</option>'); for(i in data){$('#cate').append("<option value='"+data[i]['cate_id']+"'>"+data[i]['cate_name']+"</option>"); } }else{$('#scate').empty().append('<option value="">未分类</option>'); for(i in data){$('#scate').append("<option value='"+data[i]['cate_id']+"'>"+data[i]['cate_name']+"</option>"); } } },'json'); });
+
+</script>
+<div class="bottom">声明：系统开发版权归重庆艾斯顿文化传媒有限公司所有，翻版必究</div>
+</body>
+<include file="Common/alert" />
+</html>

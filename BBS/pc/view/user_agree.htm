@@ -1,0 +1,23 @@
+<? include "./pc/view/user_header.inc.htm"; ?>
+
+<table class="tlist margin" width="100%">
+	<tr align="center">
+		<th align="left">主题</th>
+		<th width="100">点赞时间</th>
+	</tr>
+	<? foreach ($threadlist as $thread) { ?>
+	<tr align="center">
+		<td align="left" class="breakall"><a href="<?=$thread['url']?>"><?=$thread['subject']?></a><br><i><?=$thread['message']?></i></td>
+		<td><i class="icon agreed"></i><?=$thread['agree_create_date_fmt']?></td>
+	</tr>
+	<? } ?>
+</table>
+
+<div class="page"><?=$pages?></div>
+
+<? include "./pc/view/user_footer.inc.htm"; ?>
+
+
+<script>
+$('#user_menu').find('a').eq(2).class_active();
+</script>

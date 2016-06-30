@@ -1,0 +1,1 @@
+<?php exit;?>	2016-02-17 09:24:19	0.0.0.0	/BBS/	0	<br> Error[8192]: mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead, File: C:\xampp\htdocs\aiston\BBS\xiunophp\db.class.php, Line: 54

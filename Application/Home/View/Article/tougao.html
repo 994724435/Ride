@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv=”X-UA-Compatible” content=”IE=8,chrome=1″ >
+	<title>内页列表</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__public.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__style.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="content">
+		<div class="content-left-nav">
+			<div class="left-nav">
+				<div class="left-title">铁骑之声</div>
+				<div class="left-content">
+					<ul>
+						<li class="active active01"><a href="">我要投稿</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-right">
+			<div class="title">
+				<a href="">首页</a> > <a href="/index.php/Home/Article/Tieqi">铁骑之声</a> > <a href="" class="on">我要投稿</a>
+			</div>
+		
+			<div class="submission">
+				<div class="submission-page">
+				<form method="post" action="/index.php/Home/Article/tougao" enctype="multipart/form-data">		
+					<!--<h4>我要投稿</h4>-->
+					<br />
+					<div class="cmlt02">
+						<div>
+							<span>投稿单位：</span>
+							<input type="text" name="unit"/>
+						</div>
+						<div>
+							<span>投稿人：</span>
+							<input type="text" name="name"/>
+						</div>
+						<div>
+							<span>主题：</span>
+							<input type="text" name="theme"/>
+						</div>
+						<div>
+							<span>发信内容：</span>
+							<textarea name="content" id="" cols="30" rows="10"></textarea>
+						</div>
+						<div><a href="/index.php/Home/Article/Tieqi">返回</a><button>确认</button></div>
+					</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

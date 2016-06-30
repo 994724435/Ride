@@ -1,0 +1,108 @@
+<?include './admin/view/header.inc.htm';?>
+
+<div class="panel">
+	<div class="header">插件详情</div>
+	<div class="body">
+		<table class="form">
+			<tr>
+				<td>插件图标：</td>
+				<td><img src="<?=$plugin['icon_url']?>" width="54" height="54" /></td>
+			</tr>
+			<tr>
+				<td>插件名：</td>
+				<td><?=$plugin['name']?> v<?=$plugin['version']?></td>
+			</tr>
+			<tr>
+				<td>要求 BBS 最低版本：</td>
+				<td>v<?=$plugin['bbs_version']?></td>
+			</tr>
+			<tr>
+				<td>目录：</td>
+				<td><?=$dir?></td>
+			</tr>
+		<? if(!empty($plugin['username'])) { ?>
+			<tr>
+				<td>作者：</td>
+				<td><?=$plugin['username']?></td>
+			</tr>
+		<? } ?>
+		<? if(!empty($plugin['email'])) { ?>
+			<tr>
+				<td>Email：</td>
+				<td><?=$plugin['email']?></td>
+			</tr>
+		<? } ?>
+			<tr>
+				<td>介绍：</td>
+				<td><?=$plugin['brief']?></td>
+			</tr>
+		<? if($plugin['is_official']) { ?>
+			<tr>
+				<td>价格：</td>
+				<td><?=$plugin['price']?></td>
+			</tr>
+			<tr>
+				<td>用户评级：</td>
+				<td><?=$plugin['stars_fmt']?></td>
+			</tr>
+			<tr>
+				<td>官方评级：</td>
+				<td><?=$plugin['user_stars_fmt']?></td>
+			</tr>
+			<tr>
+				<td>安装次数：</td>
+				<td><?=$plugin['installs']?></td>
+			</tr>
+			<tr>
+				<td>销售次数：</td>
+				<td><?=$plugin['sells']?></td>
+			</tr>
+			<tr>
+				<td>通过官方认证：</td>
+				<td><? if($plugin['is_cert']) { ?><span class="green bold">通过</span><? } else { ?><span class="red bold">未通过</span><? } ?></td>
+			</tr>
+		<? } ?>	
+		<tr>
+			<td></td>
+			<td>
+				<button class="small blue" id="plugin_install_button">安装</button> 　
+				<button class="small red" id="plugin_unstall_button">卸载</button>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+
+<?include './admin/view/footer.inc.htm';?>
+
+<script>
+var dir = '<?=$dir?>';
+$('#plugin_install_button').on('click', function() {
+	$.xget('plugin/'+dir+'/install.php', function(code, message) {
+		if(code == 0) {
+			$('#plugin_install_button').button('disabled');
+			$('#plugin_unstall_button').button('reset');
+			$.alert('安装成功');
+		} else {
+			$.alert(message);
+		}
+	});
+});
+$('#plugin_unstall_button').on('click', function() {
+	$.xget('plugin/'+dir+'/unstall.php', function(code, message) {
+		if(code == 0) {
+			$.alert('卸载成功');
+			$('#plugin_install_button').button('reset');
+			$('#plugin_unstall_button').button('disabled');
+		} else {
+			$.alert(message);
+		}
+	});
+});
+<? if($plugin['installed']) { ?>
+$('#plugin_install_button').button('disabled');
+<? } else { ?>
+$('#plugin_unstall_button').button('disabled');
+<? } ?>
+
+</script>

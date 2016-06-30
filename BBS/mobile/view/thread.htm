@@ -1,0 +1,101 @@
+<? include "./mobile/view/header.inc.htm"; ?>
+
+<div class="panel_body margin">
+	<dl class="row" pid="<?=$first['pid']?>" id="firstpost">
+		<dt class="vtop">
+			<a href="mobile/<?=$thread['user_url']?>" class="author">
+				<img src="<?=$thread['user_avatar_url']?>" class="avatar small" />
+			</a>
+		</dt>
+		<dd>
+			<p class="subject breakall bold" pid="<?=$first['pid']?>"><?=$thread['subject']?></p>
+			
+			<dl class="row" style="margin-top: 4px;">
+				<dt class="left small">
+					<b class="light"><a href="mobile/user-<?=$thread['uid']?>.htm"><?=$thread['username']?></a></b>　
+					<i class="light"><?=$thread['create_date_fmt']?></i>
+				</dt>
+				<dd class="right grey">
+				<? if($allowupdate || $first['allowupdate']) { ?>
+					<a href="mobile/post-update-<?=$first['pid']?>.htm" class="nocache" title="编辑"><i class="icon edit"></i></a>
+				<? } ?>
+				
+				<? if($allowdelete || $first['allowdelete']) { ?>
+					<a href="post-delete-<?=$first['pid']?>.htm" class="delete" title="删除"><i class="icon trash-o"></i></a>
+				　<? } ?>
+					<i class="icon agree" title="赞同" tabindex="0" role="button"></i>
+					<i class="icon agreed" title="取消赞同" style="display: none;" tabindex="0" role="button"></i>
+					<a href="mobile/agree-list-<?=$first['pid']?>.htm" class="ajax dialog nocache icon agrees <?=$thread['agrees_class']?>" dialog='{"modal":false,"position":4}' ><?=$first['agrees']?></a>
+				</dd>
+			</dl>
+		</dd>
+	</dl>
+	<div id="thread_post" class="thread_post" pid="<?=$thread['firstpid']?>">
+		<?=$first['message']?>
+	</div>
+	
+<? if($thread['posts'] > 0) { ?>
+
+	<div id="postlist_title">
+		<span class="active grey" style="cursor:pointer">回复</span> 
+		<span id="posts" class="posts <?=$thread['posts_class']?>"><?=$thread['posts']?></span> &nbsp; 
+		<span class="grey" style="cursor:pointer">只看赞同</span> 
+	</div>
+	
+<? } else {?>
+
+	<div id="postlist_title" style="border: 0px;"></div>
+	
+<? } ?>
+	
+	<div id="postlist">
+		<? include './mobile/view/post_list_body.inc.htm';?>
+	</div>
+	
+	<dl class="row vtop margin" id="post_create_dl">
+		<dt>
+			<img src="<?=$user['avatar_url']?>" class="avatar" />
+		</dt>
+		<dd>
+			<dl class="row">
+				<dt class="left small">
+					<b class="light"><?=$user['username']?></b>　
+					<i class="light"><?=$user['create_date_fmt']?></i>
+				</dt>
+				<dd class="right">
+				</dd>
+			</dl>
+			<div class="post margin">
+				<form id="quick_post_form" action="post-create-<?=$tid?>-quick.htm" method="post">
+					<textarea style="width: 100%; height:50px;" name="message"></textarea>
+					<dl class="row margin">
+						<dt>
+							<button type="submit" loading-text="正在提交..." class="small grey">回帖</button>
+						</dt>
+						<dd class="right">
+						</dd>
+					</dl>
+				</form>
+			</div>
+		</dd>
+	</dl>
+</div>	
+
+<br>
+<p class="center margin"><button class="big grey" onclick="history.back();">  &nbsp;返回&nbsp; </button></p>
+<br>
+
+<script id="script_data">
+// 全局的数据
+var allowpost = <?=$allowpost?>;
+var tid = <?=$tid?>;
+var thread = <?=xn_json_encode($thread)?>;
+</script>
+
+<? include "./mobile/view/footer.inc.htm"; ?>
+
+<script>
+render_forumlist();
+render_threadlist();
+post_list_script(fid);
+</script>

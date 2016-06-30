@@ -1,0 +1,215 @@
+<include file="Common/header" />
+<script type="text/javascript" src="__JS__jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="__CSS__cssMember.css" type="text/css">
+<style>
+	.photo_col1{
+		width: 83px;
+	}
+	.photo_col2{
+		width: 414px;
+	}
+	.photo_col3{
+		width: 122px;
+	}
+	.photo_col4{
+		width: 101px;
+	}
+	.photo_col5{
+		width: 186px;
+	}
+	.photo_col6{
+		width: 104px;
+	}
+	.photo_td1{
+		width: 83px;
+		line-height: 116px;
+		text-align: center;
+		border-left: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.photo_td2{
+		width: 395px;
+		line-height: 28px;
+		padding-left: 19px;
+		padding-top: 12px;
+		text-align: center;
+		border-left: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.photo_td3{
+		width: 104px;
+		line-height: 116px;
+		padding-left: 18px;
+		border-left: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.photo_td3 input{
+		width: 82px;
+	}
+	.photo_td4{
+		width: 58px;
+		line-height: 116px;
+		padding-left: 43px;
+		border-left: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.photo_td4 input{
+		width: 16px;
+	}
+	.photo_td5{
+		width: 186px;
+		line-height: 116px;
+		text-align: center;
+		border-left: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.photo_td6{
+		width: 104px;
+		line-height: 116px;
+		text-align: center;
+		border: 1px solid #eaeaea;
+		border-top: none;
+		color: #ba0000;
+	}
+	.photo_td6 a {
+		color: #ba0000;
+	}
+	.photo_row input{
+		border: none;
+	}
+	.keep input{
+		width: 119px;
+		height: 35px;
+		margin-top: 14px;
+		margin-left: 10px;
+		margin-bottom: 39px;
+		background: url(__IMAGES__delete.png);
+	}
+	.addimg{
+		margin-left: 668px;
+		padding-top: 29px;
+	}
+	.check_page{
+		height: 50px;
+		width: 1017px;
+		margin-left: 12px;
+		border-bottom: 1px solid #dddddd;
+	}
+	#check_title{
+		margin-top: 22px;
+		display: inline-block;
+		font-size: 14px;
+		color: #92908f;
+	}
+	#check_{
+		width:116px;
+		height: 24px;
+		color:#999898;
+	}
+</style>
+<div class="rightfix">
+  	<a class="home1"></a><a class="home_now">稿件管理</a>
+  	<div class="clear"></div>
+  	<div class="menberlist">
+  		<div class='check_page'>
+  			<!--<span id="check_title">选择页面</span>
+  			<select name="check_page" id="check_">	
+  				<foreach name="img_page" item="val">
+  					<option value="{$val.bp_id}" <?php if($bp_id == $val['bp_id']){echo "selected='selected'";} ?>>{$val.bp_name}</option>
+  				</foreach>
+  			</select>-->
+  		</div>
+		<div class="menber_con">
+			<form action="" method="post">
+			<div class="menber_title">
+	  		
+	  			<div class="photo_col5 f menber_col">
+	  				投稿单位
+	  			</div>
+	  			<div class="photo_col3 f menber_col">
+	  				投稿人
+	  			</div>
+	  			<div class="photo_col4 f menber_col">
+	  				主题
+	  			</div>
+	  			<div class="photo_col2 f menber_col">
+	  				发信内容
+	  			</div>
+	  			<div class="photo_col6 f menber_col">
+	  				操作
+	  			</div>
+  			</div>
+  			<div class="clear"></div>
+  			<foreach name="res" item="val">
+  			<div class="photo_row" style="text-align: center;padding-top: 8px;">
+  				
+	  			<div class="photo_col5 f menber_col">{$val.tg_unit}
+	  			</div>
+	  			<div class="photo_col3 f menber_col">{$val.tg_name}
+	  			</div>
+	  			<div class="photo_col4 f menber_col">{$val.tg_theme}
+	  			</div>
+	  			<div class="photo_col2 f menber_col">{$val.tg_content}
+	  			</div>
+	  			<div class="photo_col6 f menber_col">
+  					<a href="">审核通过</a>
+  					<a href="{:U('/index.php/Admin/Link/words_del',array('img_id'=>$val['tg_id']))}">删除</a>
+	  			</div>  				
+  			</div>
+  			<div class="clear"></div>
+  			</foreach>
+		</div>
+		<div class="keep">
+  			<input type="submit" value="">
+  		</div>
+  		</form>
+  	</div>
+</div>
+<div class="clear"></div>
+<!-- 权限判断 -->
+<input type="hidden" name="power" value="{$current_admin.admin_power}">
+<div class="bottom">声明：系统开发版权归重庆艾斯顿文化传媒有限公司所有，翻版必究</div>
+<script>
+var adm_power = $("input[name='power']").val();
+if(adm_power.indexOf('banner管理') === -1){
+	$('.photo_td3 input,.photo_td4 input,.photo_td5 input').addClass('friendShip1_notice_block show_block');
+	$('.photo_td6 a').addClass('friendShip1_notice_block show_block').attr('href','javascript:;');
+	$('.keep input').addClass('friendShip1_notice_block show_block').attr('type','button');
+}else{
+	$('.photo_td3 input').blur(function(){
+		var wl_name = $(this).val();
+		var id = $(this).attr('imgid');
+		$.post('/Admin/Link/change_name',{'wl_name':wl_name,'id':id},function(data){
+			if(data){
+				return true;
+			}
+		});
+	});
+	$('.photo_td4 input').blur(function(){
+		var wl_order = $(this).val();
+		var id = $(this).attr('imgid');
+		$.post('/Admin/Link/change_order',{'wl_order':wl_order,'id':id},function(data){
+			if(data){
+				return true;
+			}
+		});
+	});
+	$('.photo_td5 input').blur(function(){
+		var wl_gourl = $(this).val();
+		var id = $(this).attr('imgid');
+		$.post('/Admin/Link/change_gourl',{'wl_gourl':wl_gourl,'id':id},function(data){
+			if(data){
+				return true;
+			}
+		});
+	});
+}
+$('#check_').change(function(){ 
+	var bp_id = $(this).val();
+	var url = '/Admin/Link/img_link/bp/'+bp_id;
+	window.location.href = url;
+});
+</script>
+<include file="Common/alert" />
+</body>
+</html>

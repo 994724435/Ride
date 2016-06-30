@@ -1,0 +1,92 @@
+<include file="Common/header" />
+<style>
+	table tr td{border: 1px solid #eaeaea; line-height: 35px; background: #F6F6F6; width: 928px; color: #646464; } table{margin-left: 20px; margin-top: 20px; } b{color: #b0b0b0; } .table_title td{border: none; background: #EAEAEA; } .tab1{width: 75px; padding-left: 5px; text-align: center; } .tab3{width: 98px; padding-left: 12px; } .tab2{width: 348px; padding-left: 24px; text-align: left; } .tab4{width: 126px; padding-left: 12px; } #nav .tab5{border-right: 1px solid #ccc; } .tab5{width: 198px; padding-left: 20px; } .off{display:none; } .on{display:block; background: #DBDBDB; border: 2px solid #D1D1D1; padding-left: 14px; } .delete{color: #CB853A; } .look{color: #646464; display: inline-block; } .shut{color: #646464; display: none; } .see{display: inline-block; color: #C423BC; } .close{display: none; color: #C423BC; } .time{float: right; padding-right: 10px; }.page_link{float: right;}
+</style>
+<div class="rightfix">
+  	<a href="{:U('/index.php/Admin/Index/index')}" class="home1"></a><a class="home_pass"></a><a class="home_now">纪委留言</a>
+  	<div class="clear"></div>
+  	<table CellSpacing=0>
+  		<div class="table_title">
+  			<tr id="nav">
+	  			<td class="tab1"><b>姓名</b></td>
+	  			
+	  			<td class="tab1"><b>主题</b></td>
+	  			<td class="tab2"><b>内容</td>
+	  			
+	  			<td class="tab4"><b>留言时间</b></td>
+	  			<td class="tab3"><b>操作</b></td>
+  			</tr>
+  		</div>
+ 		<div class="clear"></div>
+ 		<foreach name="msg" item="val">
+	  		<tr>
+	  			<td class="tab1">{$val.ad_name}</td>
+	  			
+	  			<td class="tab1"><b>{$val.ad_theme}</b></td>
+	  			<td class="tab2">{$val.ad_content}</td>
+	  			
+	  			<td class="tab4">{$val.ad_time}</td>
+	  			<td class="tab3"><a class="see">查看</a> <a class="close" style="display:none">关闭</a></td>
+	  		     <!--<td class="tab3"><a href="{:U('/index.php/Admin/Message/jiwei_delete',array('id'=>$val['ad_id']))}" class="delete">删除</a> <a class="close" style="display:none">关闭</a></td>-->
+	  		
+	  		</tr>
+	  		<tr>
+	  			<td colspan="5" class="tab6">
+	  				<div class="off">
+	  					<p>邮箱：</p><span style="color: orangered;">{$val.ad_email}</span>
+	  					<p>住址：</p><span style="color: orangered;">{$val.ad_address}</span>
+	  				</div>
+	  			</td>
+	  		</tr>
+  		</foreach>
+  		<!--<tr>
+  			<td class="tab7" colspan="5">
+  				<span>每页显示条数：</span>
+  				<select name="limit" id="limit">
+            <option value="">请选择</option>
+	  				<option value="5">5</option>
+	  				<option value="10">10</option>
+	  				<option value="20">20</option>
+	  				<option value="50">50</option>
+	  			</select>
+	  			<div class="page_link">
+	  				{$show}
+	  			</div>
+  			</td>
+  		</tr>-->
+  	</table>
+  	<!-- 权限判断 -->
+<input type="hidden" name="power" value="{$current_admin.admin_power}">
+<script>
+var adm_power = $("input[name='power']").val();
+if(adm_power.indexOf('留言管理') === -1){
+	$('.delete').addClass('friendShip1_notice_block show_block').attr('href','javascript:;');
+}
+$('.look').click(function(){
+	$(this).parents().next().find('.off').removeClass('off').addClass('on');
+		$(this).parent().parent().find('.see').css('display','none').next().css('display','inline-block');
+		$(this).css('display','none').next().css('display','inline-block');
+	});
+	$('.shut').click(function(){
+	$(this).parents().next().find('.on').removeClass('on').addClass('off');
+	$(this).parent().parent().find('.close').css('display','none').prev().css('display','inline-block');
+	$(this).css('display','none').prev().css('display','inline-block');
+	})
+	$('.see').click(function(){
+	$(this).parents().next().find('.off').removeClass('off').addClass('on');
+	$(this).css('display','none').next().css('display','inline-block');
+	$(this).parent().prev('.tab2 .look').css('display:none').next().css('display','inline-block');
+});
+$('.close').click(function(){
+	$(this).parents().next().find('.on').removeClass('on').addClass('off');
+	$(this).css('display','none').prev().css('display','inline-block');
+});
+	$('#limit').change(function(){
+	var page_num = $(this).val();
+	var url = '/Admin/Message/index/limit/'+page_num;
+	window.location.href = url;
+});
+</script>
+<include file="Common/alert" />
+</body>
+</html>

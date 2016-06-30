@@ -1,0 +1,9 @@
+<? include "./pc/view/header.inc.htm"; ?>
+
+<div class="tab" id="user_menu">
+	<a href="user-<?=$_uid?>.htm" nofollow>个人资料</a>
+	<? if($_user['uid'] != 0) { ?>
+	<a href="user-thread-<?=$_uid?>.htm" nofollow>他的发帖</a>
+	<a href="user-agree-<?=$_uid?>.htm" nofollow>他 赞 的</a>
+	<? } ?>
+</div>	

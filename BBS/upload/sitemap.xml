@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset>
+		<url>
+			  <loc>http://localhost/BBS/thread-4.htm</loc>
+			   <lastmod>2016-01-27</lastmod>
+			    <changefreq>daily</changefreq>
+			    <priority>1.0</priority>
+		 </url>
+		<url>
+			  <loc>http://localhost/BBS/thread-3.htm</loc>
+			   <lastmod>1970-01-01</lastmod>
+			    <changefreq>daily</changefreq>
+			    <priority>1.0</priority>
+		 </url>
+		<url>
+			  <loc>http://localhost/BBS/thread-2.htm</loc>
+			   <lastmod>1970-01-01</lastmod>
+			    <changefreq>daily</changefreq>
+			    <priority>1.0</priority>
+		 </url>
+		<url>
+			  <loc>http://localhost/BBS/thread-1.htm</loc>
+			   <lastmod>2016-01-23</lastmod>
+			    <changefreq>daily</changefreq>
+			    <priority>1.0</priority>
+		 </url>
+</urlset>

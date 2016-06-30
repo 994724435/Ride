@@ -1,0 +1,486 @@
+[ 2016-04-18T10:12:34+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0024s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001080s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001819s ]
+
+[ 2016-04-18T10:12:34+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001086s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001168s ]
+
+[ 2016-04-18T10:12:35+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001620s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000321s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000437s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025118s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001587s ]
+
+[ 2016-04-18T10:12:35+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001991s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002184s ]
+
+[ 2016-04-18T10:12:37+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001321s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000266s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027749s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001130s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001203s ]
+
+[ 2016-04-18T10:12:37+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001103s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001914s ]
+
+[ 2016-04-18T10:13:10+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000091s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001830s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000348s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000475s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030221s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030286s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001195s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001282s ]
+
+[ 2016-04-18T10:13:10+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000896s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000992s ]
+
+[ 2016-04-18T10:15:14+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001787s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000372s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000479s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039743s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002163s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002274s ]
+
+[ 2016-04-18T10:15:14+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000157s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001579s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001846s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002027s ]
+
+[ 2016-04-18T10:15:50+08:00 ] ::1 /index.php/Home/Article/Jiguan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001870s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000573s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000656s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\e673cf248110ac45b865618084b625df.php 第 19 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\e673cf248110ac45b865618084b625df.php 第 24 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\e673cf248110ac45b865618084b625df.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016811s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000895s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000947s ]
+
+[ 2016-04-18T10:15:50+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003632s ]
+
+[ 2016-04-18T10:15:52+08:00 ] ::1 /index.php/Home/Article/Dadui
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\f320df477518782818be6243529173ab.php 第 19 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\f320df477518782818be6243529173ab.php 第 24 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\f320df477518782818be6243529173ab.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016135s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001503s ]
+
+[ 2016-04-18T10:15:52+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001541s ]
+
+[ 2016-04-18T10:15:53+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001097s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001129s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001203s ]
+
+[ 2016-04-18T10:15:53+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000997s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001115s ]
+
+[ 2016-04-18T10:19:13+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001497s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000307s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024979s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000991s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001055s ]
+
+[ 2016-04-18T10:19:16+08:00 ] 127.0.0.1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001524s ]
+
+[ 2016-04-18T10:32:40+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001516s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000307s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000384s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028963s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029047s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002463s ]
+
+[ 2016-04-18T10:32:40+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000922s ]
+
+[ 2016-04-18T10:32:42+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `ast_article`  [ RunTime:0.0018s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 4 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,9   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 5 LIMIT 0,6   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 6 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 7 LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 8 LIMIT 0,6   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 9 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 10 LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 11 LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ast_article` WHERE `art_cateid` = 19 LIMIT 0,6   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000251s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000317s ]
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 22 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 27 行.
+NOTIC: [8] Undefined variable: user C:\xampp\htdocs\aiston\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024525s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001188s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001281s ]
+
+[ 2016-04-18T10:32:42+08:00 ] ::1 /index.php/Home/Common/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001408s ]
+

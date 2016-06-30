@@ -1,0 +1,197 @@
+<include file="Common/header" />
+<div class="rightfix">
+    <a href="{:U('/Admin/Index/index')}" class="home1"></a><a class="home_pass">文章管理</a><a class="home_now">文章列表</a>
+    <div class="clear"></div>
+    <div class="article_list" style="width:980px;">
+        <!-- 文章分类及模糊搜索 -->
+        <div class="title">
+          <div class="span">选择分类</div>
+          <div id="dd" class="wrapper-dropdown-3" tabindex="1">
+            <span style="color:#e2e1e1;"><if condition="$cid neq 0">{$cate.cate_name}<else />未分类</if></span> 
+            <ul class="dropdown"> 
+              <li><a onclick="javascript:window.location.href='{:U('/index.php/Admin/Article/index')}'">未分类</a></li> 
+              <foreach name="acate" item="value"> 
+                <li><a onclick="javascript:window.location.href='{:U('/index.php/Admin/Article/index',array('cid'=>$value['cate_id']))}'">{$value.cate_name}</a></li> 
+              </foreach> 
+            </ul> 
+          </div> 
+          <div id="aa" class="wrapper-dropdown-3" tabindex="1"> 
+            <span style="color:#e2e1e1;"><?php if($cid && $sid){echo $ccate['cate_name'];}else{echo "未分类";} ?></span> 
+            <if condition="$cid neq 0"> 
+              <ul class="dropdown">  
+                <li><a onclick="javascript:window.location.href='{:U('/index.php/Admin/Article/index',array('cid'=>$cate['cate_id']))}'">未分类</a></li> 
+                <foreach name="scate" item="val"> 
+                  <li><a onclick="javascript:window.location.href='{:U('/index.php/Admin/Article/index',array('cid'=>$cate['cate_id'],'sid'=>$val['cate_id']))}'">{$val.cate_name}</a></li> 
+                </foreach> 
+              </ul> 
+            <else /> 
+              <ul class="dropdown"> 
+                <li><a onclick="javascript:window.location.href='{:U('/index.php/Admin/Article/index',array('cid'=>$cate['cate_id']))}'">未分类</a></li> 
+              </ul> 
+            </if> 
+          </div> 
+          <form class="allen" action="{:U('/index.php/Admin/Article/index')}"> 
+            <button type="submit"><span class="glyphicon glyphicon-search"></span></button> <input type="text" value="" class="search" placeholder="输入关键字搜索" name="q" id="searchBox" > 
+          </form> 
+        </div>
+        <div class="clear"></div>
+        <!-- 文章列表  -->
+        <form action="{:U('Admin/Article/formDelete')}" style="margin:20px 20px;" method="post">
+          <table> 
+            <tr class="table_title"> 
+              <td class="table1"><input id="allbox1" type="checkbox" />全选</td> 
+              <td class="table4">标题</td> 
+              <td class="table2">操作</td> 
+              <td class="table3">顺序</td> 
+              <td class="table3">分类</td> 
+            </tr> 
+            <div class="clear"></div> 
+            <foreach name="news" item="value"> 
+              <tr class="table_list"> 
+                <td class="table1"><input type="checkbox" value="{$value['art_id']}" name="idarr[]"/></td> 
+                <td class="table4">{$value.art_title}</td> 
+                <td div class="table2"> 
+                  <if condition="$value['art_isshow'] eq 1"> 
+                    <a class="aa1" href="javascript:;" isshow="1" artID="{$value.art_id}" style="display:inline">隐藏</a>
+                    <a href="javascript:;" class="aa4" isshow="0" artID="{$value.art_id}" style="display:none" >显示</a> 
+                  <else />
+                    <a href="javascript:;" class="aa1" isshow="1" artID="{$value.art_id}" style="display:none">隐藏</a>
+                    <a href="javascript:;" class="aa4" isshow="0" artID="{$value.art_id}" style="display:inline" >显示</a> 
+                  </if> /  <a href="{:U('/index.php/Admin/Article/editor',array('aid'=>$value['art_id']))}" class="aa2">编辑</a> /  <a href="{:U('/index.php/Admin/Article/delete',array('aid'=>$value['art_id']))}" class="aa3">删除</a>/<a class="pinglun" href="{:U('/Admin/Article/comment',array('aid'=>$value['art_id']))}"><?php if($value['mentNum']){echo "评论(".$value['mentNum'].")";}else{echo "评论(0)";} ?></a>
+                </td> 
+                <td class="table3"><input type="text" value="{$value.art_order}" artID="{$value.art_id}" class="order"/></td> 
+                <td class="table3">{$value.cate_name}</td> 
+              </tr> 
+              <div class="clear">
+            </div> 
+          </foreach> 
+        </table> 
+        <div class="pagelist"> 
+          <button type="submit" class="delete">删除所选</button> <div class="pagenum">{$show}</div> 
+        </div> 
+      </form>
+    </div>
+  </div>
+<!-- 权限判断 -->
+<input type="hidden" name="power" value="{$current_admin.admin_power}">
+      
+<script type="text/javascript">
+  var adm_power = $("input[name='power']").val();
+  if(adm_power.indexOf('文章列表') === -1){
+    $('.order,.aa1,.aa4').addClass('friendShip1_notice_block show_block');
+    $('.aa2,.aa3,.pinglun').addClass('friendShip1_notice_block show_block').attr('href','javascript:;');
+  }else{
+    var oldOrder;
+    $('.order').focus(function(){
+      oldOrder = $(this).val();
+    })
+    $('.order').blur(function(){
+      var order = $(this).val();
+      var id = $(this).attr('artID');
+      $.post('/index.php/Admin/Article/order',{'oldOrder':oldOrder,'order':order,'id':id},function(data){
+        // console.log(data);
+        if(!data){
+          return false;
+        }  
+      },'json');
+    })
+    $('.aa4').click(function(){
+      var show = $(this).attr('isshow');
+      var id = $(this).attr('artID');
+      $.post('/Admin/Article/index',{'show':show,'id':id},function(data){
+        $('.aa4').css('display','none');
+        $('.aa1').css('display','inline-block');
+      },'json')
+    })
+    $('.aa1').click(function(){
+      var show = $(this).attr('isshow');
+      var id = $(this).attr('artID');
+      $.post('/Admin/Article/index',{'show':show,'id':id},function(data){
+          $('.aa1').css('display','none');
+          $('.aa4').css('display','inline-block');
+      },'json')
+    })
+    $(function(){
+      $(".aa1").click(
+        function(){
+        $(this).css("display","none");
+        $(this).next().css("display","inline-block");
+        }
+      );
+    });
+
+    $(function(){
+      $(".aa4").click(
+        function(){
+        $(this).css("display","none");
+        $(this).prev().css("display","inline-block");
+        }
+      );
+    });
+  }
+      
+function DropDown(el) {
+  this.dd = el;
+  this.placeholder = this.dd.children('span');
+  this.opts = this.dd.find('ul.dropdown > li');
+  this.val = '';
+  this.index = -1;
+  this.initEvents();
+  }
+  DropDown.prototype = {
+  initEvents : function() {
+  var obj = this;
+  
+  obj.dd.on('click', function(event){
+  $(this).toggleClass('active');
+  return false;
+  });
+  
+  obj.opts.on('click',function(){
+  var opt = $(this);
+  obj.val = opt.text();
+  obj.index = opt.index();
+  obj.placeholder.text(obj.val);
+  });
+  },
+  getValue : function() {
+  return this.val;
+  },
+  getIndex : function() {
+  return this.index;
+  }
+  }
+  
+  $(function() {
+  
+  var dd = new DropDown( $('#dd') );
+  var aa = new DropDown( $('#aa') );
+  
+  $(document).click(function() {
+  // all dropdowns
+  $('.wrapper-dropdown-3').removeClass('active');
+  });
+  
+  });
+
+$("#allbox1").click(function(){    
+    if (this.checked){
+    $(".rightfix :checkbox").each(function(){
+      this.checked=true;
+    });
+  }else{
+    $(".rightfix :checkbox").each(function(){
+      this.checked=false;
+    });
+  }
+});
+</script>
+
+<div class="clear"></div>
+
+<div class="bottom">声明：系统开发版权归重庆艾斯顿文化传媒有限公司所有，翻版必究</div>
+
+<include file="Common/alert" />
+
+</body>
+</html>

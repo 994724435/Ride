@@ -1,0 +1,48 @@
+<include file="Common/header" />
+<style>
+	table tr td{border: 1px solid #eaeaea; line-height: 35px; background: #F6F6F6; width: 928px; color: #646464; } table{margin-left: 20px; margin-top: 20px; } b{color: #b0b0b0; } .table_title td{border: none; background: #EAEAEA; } .tab1{width: 75px; padding-left: 5px; text-align: center; } .tab3{width: 98px; padding-left: 12px; } .tab2{width: 348px; padding-left: 24px; text-align: left; } .tab4{width: 126px; padding-left: 12px; } #nav .tab5{border-right: 1px solid #ccc; } .tab5{width: 198px; padding-left: 20px; } .off{display:none; } .on{display:block; background: #DBDBDB; border: 2px solid #D1D1D1; padding-left: 14px; } .delete{color: #CB853A; } .look{color: #646464; display: inline-block; } .shut{color: #646464; display: none; } .see{display: inline-block; color: #C423BC; } .close{display: none; color: #C423BC; } .time{float: right; padding-right: 10px; }.page_link{float: right;}
+</style>
+<div class="rightfix">
+  	<a href="{:U('/index.php/Admin/Index/index')}" class="home1"></a><a class="home_now">视频管理</a>
+  	<div class="clear"></div>
+  	<table CellSpacing=0>
+  		<div class="table_title">
+  			<tr id="nav" style="text-align: center;">
+  				<td class="tab3">序号</td>
+	  			<td class="tab1"><b>标题</b></td>
+	  			<td class="tab2"><b>内容</td>
+	  			<td class="tab4"><b>发布者</b></td>
+	  			<td class="tab3"><b>操作</b></td>
+  			</tr>
+  		</div>
+ 		<div class="clear"></div>
+ 		<foreach name="data" item="val">
+ 			<form action="" method="post">
+	  		<tr style="text-align: center;">
+	  			<td class="tab3">{$val.v_id}</td>
+	  			<td class="tab1" >
+	  				<textarea name="name" rows="3" cols="20">{$val.v_name}</textarea>
+	  			</td>
+	  			<td class="tab2">
+	  			 <textarea name="content" rows="8" cols="40">{$val.v_content}</textarea>	
+	  			</td>
+	  			<td class="tab4">
+	  			 <input type="text" id="" name="admin" value="{$val.v_admin}" />	
+	  				</td>
+	  			<td class="tab3">
+	  				<input type="hidden" name="id" id="id" value="{$val.v_id}" />
+	  				<a class="see"><input type="submit" id="" name="" value="修改"/></a>
+	  				</td>
+	  		</tr>
+
+	  		</form>	
+  		</foreach>
+
+  	</table>
+  	<!-- 权限判断 -->
+<input type="hidden" name="power" value="{$current_admin.admin_power}">
+
+
+<include file="Common/alert" />
+</body>
+</html>

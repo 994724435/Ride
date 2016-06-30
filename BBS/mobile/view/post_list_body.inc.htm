@@ -1,0 +1,38 @@
+
+<? foreach($postlist as $_post) { ?>
+	<dl class="row vtop" pid="<?=$_post['pid']?>">
+		<dt>
+			<a href="mobile/<?=$_post['user_url']?>" target="_blank" class="author">
+				<img src="<?=$_post['user_avatar_url']?>" class="avatar" />
+			</a>
+		</dt>
+		<dd>
+			<dl class="row">
+				<dt class="left small">
+					<b class="grey">
+						<a href="mobile/<?=$_post['user_url']?>"><?=$_post['username']?></a>
+					</b>　
+					<i class="grey"><?=$_post['create_date_fmt']?></i>
+				</dt>
+				<dd class="right grey">
+					<span class="floor"><?=$_post['floor']?> 楼</span>
+					
+				<? if($allowupdate || $_post['allowupdate']) { ?>
+					<a href="mobile/post-update-<?=$_post['pid']?>.htm" title="编辑"><i class="icon edit"></i></a>
+				<? } ?>
+				
+				<? if($allowdelete || $_post['allowdelete']) { ?>
+					<a href="post-delete-<?=$_post['pid']?>.htm" class="delete" title="删除"><i class="icon trash-o"></i></a>
+				　<? } ?>
+
+					<i class="icon agree" title="赞同" tabindex="0" role="button"></i>
+					<i class="icon agreed" title="取消赞同" style="display: none;" tabindex="0" role="button"></i>
+					<a href="mobile/agree-list-<?=$_post['pid']?>.htm" class="ajax dialog agrees <?=$_post['agrees_class']?>"><?=$_post['agrees']?></a>
+				</dd>
+			</dl>
+			<div class="post" pid="<?=$_post['pid']?>">
+				<?=$_post['message']?> 
+			</div>
+		</dd>
+	</dl>
+<? } ?>

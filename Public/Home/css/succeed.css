@@ -1,0 +1,76 @@
+
+.clear{clear:both;}
+.su_main{
+	margin-bottom: 150px;
+	border:1px solid #d3d3d3;
+}
+.su_main .sm_top{
+	padding-top: 29px;
+}
+.su_main .sm_top h2{
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color:#c7123a;
+	line-height: 24px;
+}
+.gonxi{
+	font-size: 24px;
+	color: #737373;
+	height: 24px;
+	text-align: center;
+	padding-top: 48px;
+	padding-bottom: 50px;
+}
+.gonxi i{
+	color: #fb3665;
+	margin-right: 20px;
+}
+.nextStep{
+	display: block;
+	width: 130px;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
+	color: #fff;
+	font-size: 16px;
+	box-shadow: 0px 2px 2px #ccc;
+	background: #e53c5f;
+	margin: 0 auto;
+	border-radius: 2px;
+}
+.pay_complete_tab{
+	width: 258px;
+	height: 28px;
+	border: 1px solid #fa3061;
+	margin: 40px auto;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.pay_complete_tab a{
+	width: 129px;
+	height: 28px;
+	color: #fa3061;
+	text-align: center;
+	line-height: 28px;
+	font-size: 14px;
+}
+.pay_complete_tab a.on{
+	color: #fff;
+	background-color: #fa3061;
+}
+.pay_complete_tab_block{
+	margin: 0 -1px 20px -1px;
+}
+.pay_complete_tab_block ul{
+	display: none;
+}
+.pay_complete_tab_block ul:first-child{
+	display: block;
+}
+.pay_complete_tab_block ul li{
+	margin-left: 10px;
+}
+.pay_complete_tab_block ul li:first-child{
+	margin-left: 0;
+}

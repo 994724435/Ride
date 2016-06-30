@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv=”X-UA-Compatible” content=”IE=8,chrome=1″ >
+	<title>领导信箱</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__public.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__style.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="content">
+		<div class="content-left-nav">
+			<div class="left-nav">
+				<div class="left-title">互动交流</div>
+				<div class="left-content">
+					<ul>
+						<li class="active active01"><a href="/index.php/Home/Communicate/Lead_mailbox">领导信箱</a></li>
+						<li><a href="/index.php/Home/Communicate/jiwei">纪委信箱</a></li>
+						<li class="last"><a href="/index.php/Home/Communicate/suggest">建言献策</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-right">
+			<div class="title">
+				<a href="">首页</a> > <a href="">互动交流</a> > <a href="" class="on">领导信箱</a>
+			</div>
+			<div class="lead">
+				<div class="write-letters">
+					<form action="/index.php/Home/Communicate/Lead_mailbox" method="post">
+					<!--<h4>我要写信</h4>-->
+					<!--<div class="cmlt01">
+						<div class="fl"><span>您的姓名：</span><input type="text" name="name"/></div>
+						<div class="fr"><span>联系电话：</span><input type="text" name="tel"/></div>
+						<div class="fl"><span>联系信箱：</span><input type="text" name="email"/></div>
+						<div class="fr"><span>邮政编码：</span><input type="text" name="youzhen"/></div>
+						<div class="fl"><span>联系地址：</span><input type="text" name="address"/></div>
+					</div>-->
+					<div class="cmlt02">
+						<div>
+							<span>单位：</span>
+							<input type="text" name="address"/>
+						</div>
+						<div>
+							<span>姓名：</span>
+							<input type="text" name="name"/>
+						</div>
+						<div>
+							<span>主题：</span>
+							<input type="text" name="theme"/>
+						</div>
+						<div>
+							<span>发信内容：</span>
+							<textarea name="content" id="" cols="30" rows="10"></textarea>
+						</div>
+						<div><a href="">返回</a><button>发表</button></div>
+					</div>
+				</form>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

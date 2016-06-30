@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv=”X-UA-Compatible” content=”IE=8,chrome=1″ >
+	<title>内页列表</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__public.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__style.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="content">
+		<div class="content-left-nav">
+			<div class="left-nav">
+				<div class="left-title">我的信箱</div>
+				<div class="left-content">
+				
+				</div>
+			</div>
+		</div>
+
+		<div class="content-right">
+			<div class="title title01">
+				<a href="/index.php/Home/Index/index">首页</a> > <a href="" class="on">信件</a>
+				<!--<a href="" class="last">more 》</a>-->
+			</div>
+
+			<ul class="inside-list">
+			<table border="1" cellspacing="0" cellpadding="0" style="text-align: center;">
+				<tr><th width="60px">姓 名</th><th width="150px">主 题</th><th width="390px">内 容</th><th width="50px">操作</th></tr>
+			<foreach name="msg" item="val">
+				<tr style="height: 40px;"><td>{$val['ad_name']}</td><td>{$val['ad_theme']}</td><td>{$val['ad_content']}</td><td><a href="/index.php/Home/Index/header_delete/id/{$val['ad_id']}">删除</a></td></tr>
+			</foreach>		
+			</table>	
+		   </ul>
+
+			
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

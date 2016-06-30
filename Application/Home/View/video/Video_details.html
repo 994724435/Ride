@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv=”X-UA-Compatible” content=”IE=8,chrome=1″ >
+	<title>视频详情</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__public.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__style.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+
+<link href="__CSS__video-js.css" rel="stylesheet">
+<script src="__JS__video.js"></script>
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="content">
+		<div class="content-left-nav">
+			<div class="left-nav">
+				<div class="left-title">视频详情</div>
+				<div class="left-content">
+					<!--<ul>
+						<li><a href="">秘书处</a></li>
+						<li><a href="">组织处</a></li>
+						<li class="active"><a href="">干部人事处</a>
+							<dl>
+								<dd><a href="">政工研究</a></dd>
+								<dd><a href="" class="on">政工简讯</a></dd>
+								<dd><a href="">群众工作</a></dd>
+								<dd class="last"><a href="">司法信访</a></dd>
+							</dl>
+						</li>
+						<li><a href="">宣传处</a></li>
+						<li><a href="">保卫处</a></li>
+						<li class="last"><a href="">纪检处</a></li>
+					</ul>-->
+				</div>
+			</div>
+
+			<div class="left-nav">
+				<!--<div class="left-title">最新图文</div>-->
+			</div>
+		</div>
+
+		<div class="content-right">
+			<div class="title">
+				<a href="">首页</a> > <a href="/index.php/Home/video/video">视频列表</a> > <a href="" class="on">视频详情</a>
+			</div>
+			<div class="right-content">
+				<h4>{$data['v_name']}</h4>
+				<div class="ctt01"> | 作者：{$data['v_admin']} | 发表于： {$data['v_time']} </div>
+
+				<div class="">
+					<!--<img src="__IMAGES__vd02.jpg" alt="视频详情" />-->
+					<div style="margin-left: 170px;">	
+						<!--<video id="really-cool-video" class="video-js vjs-default-skin" controls
+						 preload="auto" width="400" height="264" poster="http://video-js.zencoder.com/oceans-clip.png"
+						 data-setup='{}'>
+						  <?php if($_GET['id']){
+						  	echo "<source src='/".$_GET['id'].".mp4' type='video/mp4' /> ";
+						  }else{
+						  	echo "暂无视频";
+						  } ?>
+						 	
+							<source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+						    <source src="http://vjs.zencdn.net/v/oceans.ogv" type='video/ogg'>
+						</video>-->
+						  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="430" height="244"
+						      poster="http://video-js.zencoder.com/oceans-clip.png"
+						      data-setup="{}">
+						    <!--<source src="monkey.mp4" type='video/mp4' />-->
+						    <?php if($_GET['id']){
+						  	echo "<source src='/".$_GET['id'].".mp4' type='video/mp4' /> ";
+						  }else{
+						  	echo "暂无视频";
+						  } ?>
+						    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+						    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+						    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+						    <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+						  </video>
+					</div>	
+				</div>
+
+				<dl class="ddt01">
+					<dt><h4 style="margin-top: 20px;">视频介绍：</h4></dt>
+					<dt class="sctt01">
+					{$data['v_content']}	
+					</dt>
+					<!--<dt class="sctt01">
+						我们将推出更多的政府政工机构网站,单位网站管理系统,做中国最好,易用,安全的政工上网,政工部门信息化网站系统。应用本网站管理系立,市,县,区政工使用的网站模板、政工办公室网站系统正式版和政工法制宣传科网页模板,项目审批科网站管理系统商业版,综合管理科网划科的宣传网站，(政工监察大队)
+					</dt>-->
+				</dl>
+			</div>
+			<div class="ctt02">
+				<!--<div>上一篇：<span>军队政工网站,军事网站模板下载</span></div>
+				<div>下一篇：<span>军队政工网站,军事网站模板下载</span></div>			-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

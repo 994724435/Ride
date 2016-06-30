@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="__JS__jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="__CSS__css.css" type="text/css">
+<link rel="stylesheet" href="__CSS__default.css" />
+  <link rel="stylesheet" href="__CSS__prettify.css" />
+  <link rel="stylesheet" href="__CSS__page.css" />
+  <script charset="utf-8" src="__JS__kindeditor.js"></script>
+  <script charset="utf-8" src="__JS__zh_CN.js"></script>
+  <script charset="utf-8" src="__JS__prettify.js"></script>
+  <script>
+    KindEditor.ready(function(K) {
+      var editor1 = K.create('textarea[name="content1"]', {
+        cssPath : '__CSS__prettify.css',
+        uploadJson : '__PHP__upload_json.php',
+        fileManagerJson : '__PHP__file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+        }
+      });
+      prettyPrint();
+    });
+  </script>
+<script type="text/javascript">
+$(function(){
+  $("#tip1").mouseover(
+    function(){
+    $(".set").finish();
+    $(".set").slideDown(500);
+    }
+  );
+});
+
+$(function(){
+  $(".set").mouseleave(
+    function(){
+    $(".set").finish();
+    $(".set").show().delay(1000).slideUp(500);
+    }
+  );
+});
+
+$(document).ready(function(){
+  var l = $(window).width()-218;
+    $(".rightfix").css("width",l);
+  $(window).resize(function(){
+    $(".rightfix").css("width",$(window).width()-218);
+  });
+  var h = $(window).height()-105;
+    $(".rightfix").css("height",h);
+  $(window).resize(function(){
+    $(".rightfix").css("height",$(window).height()-105);
+  });
+});
+
+$(function(){
+  $(".step").click(
+    function(){
+    $(this).next('div').finish();
+    $(this).toggleClass("stepclick");
+    $(this).parent().siblings('div').children('ul').slideUp(500);
+    $(this).parent().siblings('div').children('p').removeClass("stepclick");
+    $(this).next('ul').slideToggle(500);
+
+    }
+  );
+});
+</script>
+
+<title>首页</title>
+</head>
+<body>
+<div class="set">
+  <if condition="$current_admin['admin_level'] eq 1"><a id="ch_pa1" class="circle1  show_block changePassword_block">修改密码</a><a id="addadmin1" class="circle2 show_block addAdmin_block">添加管理员</a><a id="setpower1" class="circle3 show_block changePermissions_block">设置权限</a><a id="logout1" class="circle4 show_block friendShip2_notice_block">退出系统</a>
+  <else /><a id="ch_pa1" class="circle1  show_block changePassword_block">修改密码</a><a id="logout1" class="circle4 show_block friendShip2_notice_block">退出系统</a>
+  </if>
+</div>
+
+<div class="top">
+  <div class="logo">网站后台管理系统</div>
+  <div class="admin">
+    <p>{$current_admin.admin_relname}</p>
+    <a id="tip1">
+      <if condition="$current_admin['admin_level'] eq 1">（超级管理员）
+      <else />（普通管理员）
+      </if>
+    </a>
+  </div>
+  <a class="gotoindex" onclick="javascript:window.location.href='http://www.aiston.com'" >浏览网站</a>
+  <div class="welc">您好，欢迎您登录网站后台管理平台</div>
+</div>
+<div class="clear"></div>
+<div class="leftfix">
+<foreach name="n_nav" item="val">
+  <div>
+    <p class="<?php echo 'step'.$val['nav_id']; ?> step" name="{$val.nav_url}">{$val.nav_name}<span class="arrowL"></span><span class="arrowR"></span></p>
+    <ul class="slidedown">
+      <foreach name="val.sid" item="value">
+      <li><a href="{$value.nav_url}">{$value.nav_name}</a></li>
+      </foreach>
+    </ul>
+  </div>
+</foreach>
+  
+</div>

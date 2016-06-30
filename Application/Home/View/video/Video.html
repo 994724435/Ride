@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv=”X-UA-Compatible” content=”IE=8,chrome=1″ >
+	<title>视频列表</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__public.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__style.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="content">
+		<div class="content-left-nav">
+			<div class="left-nav">
+				<div class="left-title">影音视频</div>
+				<div class="left-content">
+					<!--<ul>
+						<li><a href="">一月训练视频</a></li>
+						<li><a href="">二月训练视频</a></li>
+						<li class="active active01"><a href="">三月训练视频</a></li>
+						<li><a href="">四月训练视频</a></li>
+						<li><a href="">五月训练视频</a></li>
+						<li class="last"><a href="">六月训练视频</a></li>
+					</ul>-->
+				</div>
+			</div>
+
+		</div>
+
+		<div class="content-right">
+			<div class="title title01">
+				<a href="/index.php/Home/Index/index">首页</a> > <a href="/index.php/Home/video/video">影音视频</a> > <a href="" class="on">大队视频</a>
+				<a href="" class="last">more 》</a>
+			</div>
+
+			<div class="video-list">
+				<div class="vlt01 fl">
+					<a href="/index.php/Home/video/video_details/id/{$data[0]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[0]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[0]['v_admin']}</i></span>
+							<span class="fr">{$data[0]['v_time']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[1]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[1]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[1]['v_admin']}</i></span>
+							<span class="fr">{$data[1]['v_time']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[2]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[2]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[2]['v_admin']}</i></span>
+							<span class="fr">{$data[2]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl">
+					<a href="/index.php/Home/video/video_details/id/{$data[3]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[3]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[3]['v_admin']}</i></span>
+							<span class="fr">{$data[3]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[4]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[4]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[4]['v_admin']}</i></span>
+							<span class="fr">{$data[4]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[5]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[5]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[5]['v_admin']}</i></span>
+							<span class="fr">{$data[5]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl">
+					<a href="/index.php/Home/video/video_details/id/{$data[6]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[6]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[6]['v_admin']}</i></span>
+							<span class="fr">{$data[6]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[7]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[7]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[7]['v_admin']}</i></span>
+							<span class="fr">{$data[7]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[8]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[8]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[8]['v_admin']}</i></span>
+							<span class="fr">{$data[8]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+				<div class="vlt01 fl">
+					<a href="/index.php/Home/video/video_details/id/{$data[9]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[9]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[9]['v_admin']}</i></span>
+							<span class="fr">{$data[9]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[10]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[10]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[10]['v_admin']}</i></span>
+							<span class="fr">{$data[10]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="vlt01 fl ml">
+					<a href="/index.php/Home/video/video_details/id/{$data[11]['v_id']}"><img src="__IMAGES__vd01.jpg" alt="视频" /></a>
+					<div>
+						<p>{$data[11]['v_name']}</p>
+						<div>
+							<span class="fl">发布人：<i>{$data[11]['v_admin']}</i></span>
+							<span class="fr">{$data[8]['v_atime']}</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="paging">
+				<span><span></span></span>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li class="on">4</li>
+					<li>5</li>
+					<li class="nb">...</li>
+					<li>10</li>
+					<li>20</li>
+					<li>30</li>
+				</ul>
+				<span><span class="paging-right"></span></span>
+				<button>跳转</button>
+				<input type="text" />
+				<span class="last01">页</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

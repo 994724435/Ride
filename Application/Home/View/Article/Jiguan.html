@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv=”X-UA-Compatible” content=”IE=8,chrome=1″ >
+	<title>内页列表</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__public.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__style.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="content">
+		<div class="content-left-nav">
+			<div class="left-nav">
+				<div class="left-title">机关信息</div>
+				<div class="left-content">
+					<ul>
+						<li class="active active01"><a href="/index.php/Home/Article/Jiguan">训练处</a></li>
+						<li><a href="/index.php/Home/Article/zhengzhi">政治处</a></li>
+						<li><a href="/index.php/Home/Article/baozhang">保障处</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-right">
+			<div class="title title01">
+				<a href="/index.php/Home/Index/index">首页</a> > <a href="" class="on">机关信息</a> > <a href="" class="on">训练处新闻</a>
+				<!--<a href="" class="last">more 》</a>-->
+			</div>
+
+			<ul class="inside-list">
+			<foreach name="data" item="val">
+				<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+					<span class="fl"><i>·</i>{$val.art_title}</span>
+					<span class="fr">{$val.art_addtime}</span>
+				</a></li>
+			</foreach>	
+			</ul>
+
+			<div class="paging">
+				<span><span></span></span>
+				<ul>
+					<li class="on"><a href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="">3</a></li>
+					<li><a href="">4</a></li>
+					<li><a href="">5</a></li>
+					<li class="nb">...</li>
+					<li><a href="">10</a></li>
+					<li><a href="">20</a></li>
+					<li><a href="">30</a></li>
+				</ul>
+				<span><span class="paging-right"></span></span>
+				<button><a href="">跳转</a></button>
+				<input type="text" />
+				<span class="last01">页</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

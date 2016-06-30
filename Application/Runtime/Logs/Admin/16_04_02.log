@@ -1,0 +1,142 @@
+[ 2016-04-02T12:36:17+08:00 ] ::1 /index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-04-02T12:36:18+08:00 ] ::1 /index.php/Admin/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2016-04-02T12:36:18+08:00 ] ::1 /index.php/Admin/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000914s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001461s ]
+
+[ 2016-04-02T12:36:25+08:00 ] ::1 /index.php/Admin/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `ast_admin` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `ast_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007238s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2016-04-02T12:36:25+08:00 ] ::1 /index.php/Admin/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000972s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001062s ]
+
+[ 2016-04-02T12:36:25+08:00 ] ::1 /index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003847s ]
+SQL: SHOW COLUMNS FROM `ast_admin` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `ast_admin`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ast_admin` WHERE `admin_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ast_nav` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `ast_nav`  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ast_admin` LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [2] Missing argument 3 for getAdminPage(), called in C:\xampp\htdocs\aiston\Application\Admin\Controller\CommonController.class.php on line 51 and defined C:\xampp\htdocs\aiston\Application\Common\Common\function.php 第 3 行.
+NOTIC: [8] Undefined variable: num C:\xampp\htdocs\aiston\Application\Common\Common\function.php 第 4 行.
+SQL: SELECT * FROM `ast_admin` ORDER BY admin_id LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000495s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000582s ]
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 225 行.
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 454 行.
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 457 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025093s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001419s ]
+
+[ 2016-04-02T12:36:28+08:00 ] ::1 /index.php/Admin/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001555s ]
+SQL: SHOW COLUMNS FROM `ast_admin` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `ast_admin`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ast_admin` WHERE `admin_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ast_nav` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `ast_nav`  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ast_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Missing argument 3 for getAdminPage(), called in C:\xampp\htdocs\aiston\Application\Admin\Controller\CommonController.class.php on line 51 and defined C:\xampp\htdocs\aiston\Application\Common\Common\function.php 第 3 行.
+NOTIC: [8] Undefined variable: num C:\xampp\htdocs\aiston\Application\Common\Common\function.php 第 4 行.
+SQL: SELECT * FROM `ast_admin` ORDER BY admin_id LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ast_artcate` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `ast_article` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `ast_artcate` WHERE `cate_pid` = 0 ORDER BY cate_id ASC  [ RunTime:0.0004s ]
+SQL: SELECT `art_order` FROM `ast_article` ORDER BY art_order DESC LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000786s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000888s ]
+NOTIC: [8] Undefined variable: htmlData C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\e16cf278f1c326e72baf6415dbd5ab87.php 第 144 行.
+NOTIC: [8] Undefined variable: htmlData C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\e16cf278f1c326e72baf6415dbd5ab87.php 第 144 行.
+NOTIC: [8] Array to string conversion C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\e16cf278f1c326e72baf6415dbd5ab87.php 第 319 行.
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\e16cf278f1c326e72baf6415dbd5ab87.php 第 548 行.
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\aiston\Application\Runtime\Cache\Admin\e16cf278f1c326e72baf6415dbd5ab87.php 第 551 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026532s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001187s ]
+

@@ -1,0 +1,176 @@
+.clear{clear:both;}
+
+/*收货地址
+------------------------------*/
+.NconWrapper{
+	margin-bottom: 120px;
+}
+.NconWrapper em{
+	color: #f92e5f;
+	padding-right: 3px;
+	font-style:normal;
+	vertical-align: -2px;
+}
+
+.NRight{
+	width: 990px;
+	border:1px solid #d2d2d2;
+}
+.rNTop{
+	padding: 15px 20px;
+	font-size: 18px;
+	color: #616161;
+	border-bottom: 1px solid #d3d3d3;
+}
+.addDizhi{
+	margin: 15px 20px;
+}
+.addDizhi a{
+	display: inline-block;
+	width: 200px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background-color: #c3c3c3;
+	font-size: 14px;
+	border-radius: 4px;
+	border:	1px solid #c6c6c6;
+	margin-right: 10px;
+	color: #fff;
+	text-shadow: 1px 1px 2px #999;
+}
+.addDizhi a:hover{
+	background-color: #c7123a;
+	border-color: #c7123a;
+}
+.addDizhiCurr{
+	color: #fff;
+	background: url(../images/n05.png);
+	border:1px solid #eb2555;
+}
+.addressBox{
+	background: #f7f7f7;
+	margin: 0 20px;
+	padding: 50px 0px;
+	border:1px solid #dbdbdb;
+}
+.addressText{
+	height: 30px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #737373;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.addressTable{
+	width: 950px;
+	text-align: center;
+	margin-bottom: 15px;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #737373;
+}
+.addressTable th{
+	line-height: 49px;
+	text-align: center;
+	background: #f9f9f9;
+	font-family: "微软雅黑";
+	border:1px solid #dbdbdb;
+	font-weight: normal;
+}
+.addressTable td{
+	line-height: 24px;
+	padding: 10px;
+	border:1px solid #dbdbdb;
+}
+.addressTable td a{
+	float: left;
+	color: #fa3061;
+	margin-left: 10px;
+}
+.addressTable td .a_1{
+	padding-left: 20px;
+}
+.addressBox .label{
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.addressBox .label span.fl{
+	height: 24px;
+	line-height: 24px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	width: 150px;
+	text-align: right;
+	margin-right: 10px;
+	color: #737373;
+}
+.adInput{
+	height: 22px;
+	line-height: 22px;
+	border:1px solid #c9c9c9;
+	padding: 0px 10px;
+	width: 180px;
+	margin-right: 10px;
+	background: #fff
+}
+.adsel{
+	height: 22px;
+	line-height: 22px;
+	border:1px solid #c9c9c9;
+	margin-right: 15px;
+
+}
+.adInd{
+	width: 50px;
+	margin-right: 10px;
+}
+.adTextarea{
+	border:1px solid #c9c9c9;
+	background: #fff;
+	width: 600px;
+	min-height: 60px;
+	padding: 10px;
+	float: left;
+}
+.adderror{
+	color: #f92e5f;
+	font-size: 12px;
+}
+.adderror:before{
+	content: url(../images/icon28.png);
+	vertical-align: -5px;
+	padding-right: 8px;
+}
+.adCheck{
+	color: #f92e5f;
+	font-size: 12px;
+	padding-left: 160px;
+}
+.adCheck input{
+	vertical-align: -1px;
+}
+.adButton{
+	padding-left: 160px;
+	margin-top: 20px;
+}
+.adButton input{
+	color: #fff;
+	background-color: #c3c3c3;
+}
+.adButton input:hover{
+	background-color: #c7123a;
+}
+.adBu{
+	width: 104px;
+	height: 28px;
+	font-family: "微软雅黑";
+	text-align: center;
+	line-height: 28px;
+	border:none;
+	margin-right: 10px;
+	border-radius: 4px;
+}

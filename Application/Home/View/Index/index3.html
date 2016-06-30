@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=8" > 使用IE8 -->
+	<meta >
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__index.css" />
+	<script src="__JS__jquery-1.11.3.min.js"></script>
+	<script src="__JS__jquery.SuperSlide.2.1.1.js"></script>
+	<script src="__JS__flash.js"></script>
+	
+
+
+</head>
+<body>
+<include file="Common/header" />
+
+<div id="content">
+	<div class="remind"><div></div></div>
+	<div class="content">
+		<div class="content-left">
+			<div class="clt01">
+
+				<div class="sclt01">
+					<div id="slideBox" class="slideBox01">
+					    <div class="hd">
+					        <ul><li></li><li></li><li></li><li></li></ul>
+					    </div>
+					    <div class="bd">
+					        <ul>
+					            <li><a href="" target="">
+						            <img src="__IMAGES__lunbo01.jpg" alt="" />
+						            <span><p>习主席视察集团军部队发表重要讲话</p></span>
+					            </a></li>
+					            <li><a href="" target="">
+						            <img src="__IMAGES__lunbo02.jpg" alt="" />
+						            <span><p>大队新训工作全面展开</p></span>
+					            </a></li>
+					            <li><a href="" target="">
+						            <img src="__IMAGES__lunbo03.jpg" alt="" />
+						            <span><p>官兵对车辆模型进行参观了解车辆构造</p></span>
+					            </a></li>
+					            <li><a href="" target="">
+						            <img src="__IMAGES__lunbo04.jpg" alt="" />
+						            <span><p>大队着力建设网络军网颇有成效</p></span>
+					            </a></li>
+					        </ul>
+					    </div>
+					</div>
+					<script type="text/javascript">
+						jQuery(".slideBox01").slide({mainCell:".bd ul",autoPlay:true});
+					</script>  
+				</div>
+
+				<div class="sclt02">
+					<div><a href="/index.php/Home/Article/Dadui" style="color: #ffffff;">大队要闻</a></div>
+					<ul>
+	                  <foreach name="data10" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>								
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="clt02"><img src="__IMAGES__clt02.jpg" alt=""></div>
+
+			<div class="clt03">
+				<div class="clt-left03 fl">
+					<div class="public">
+						<h3 class="fl"><a href="/index.php/Home/Article/Jiguan" style="color: #ffffff;">机关信息</a></h3>
+					</div>
+					<ul>
+	                   <foreach name="data4" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>						
+
+
+					</ul>
+				</div>
+<!--<div style="clear: both;"></div>-->
+				<div class="clt-left03 fr" >
+					<div class="public" >
+						<h3 class="fl"><a href="/index.php/Home/Article/Jicen" style="color: #ffffff;">时政要闻</a></h3>
+						<a href="/index.php/Home/Article/Jicen" class="fr"><span>more</span><span class="ss01">》</span></a>
+					</div>
+					<ul>
+	                  <foreach name="data5" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>	
+					</ul>
+				</div>
+<div style="clear: both;"></div>
+				<div class="clt-left03 fl mt">
+					<div class="public">
+						<h3 class="fl"><a href="/index.php/Home/Article/Jiguan" style="color: #ffffff;">工作简报</a></h3>
+						<a href="/index.php/Home/Article/Jiguan" class="fr"><span>more</span><span class="ss01">》</span></a>
+					</div>
+					<ul>
+	                  <foreach name="data6" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>	
+					</ul>
+				</div>
+<div style="clear: both;"></div>
+				<div class="clt-left03 fr mt" style="margin-top: -125px;">
+					<div class="public">
+						<h3 class="fl"><a href="/index.php/Home/Article/Jicen" style="color: #ffffff;">基层动态</a></h3>
+						<a href="/index.php/Home/Article/Jicen" class="fr"><span>more</span><span class="ss01">》</span></a>
+					</div>
+					<ul>
+	                  <foreach name="data7" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>							
+					</ul>
+				</div>
+			</div>
+<div style="clear: both;"></div>
+			<div class="clt04" >
+			<div class="picScroll-left">
+				<div class="hd">
+					<a class="next"></a>
+					<a class="prev"></a>
+				</div>
+				<div class="bd">
+					<ul class="picList">
+					  <foreach name="data4" item="val">
+						<li>
+							<div class="pic"><a href="/index.php/Home/Article/Details/artid/{$val.art_id}"><img src="{$val.art_thumb}" /></a></div>
+							<div class="title">{$val.art_title}</div>
+						</li>
+					
+					 </foreach>		
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:false,vis:4,trigger:"click"});
+			</script>
+			</div>
+
+			<div class="clt05">
+				<div class="clt-left03 fl">
+					<div class="public">
+						<h3 class="fl"><a href="/index.php/Home/Article/Tieqi" style="color: #ffffff;">铁骑之声</a></h3>
+						<a href="/index.php/Home/Article/Tieqi" class="fr"><span>more</span><span class="ss01">》</span></a>
+					</div>
+					<ul>
+	                  <foreach name="data8" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>							
+					</ul>
+				</div>
+
+				<div class="clt-left03 fr">
+					<div class="public">
+						<!--<h3 class="fl">政策法规</h3>-->
+						<h3 class="fl"><a href="/index.php/Home/Article/zhengce" style="color: #ffffff;">政策法规</a></h3>
+						<a href="/index.php/Home/Article/zhengce" class="fr"><span>more</span><span class="ss01">》</span></a>
+					</div>
+					<ul>
+	                  <foreach name="data9" item="val">
+							<li><a href="/index.php/Home/Article/Details/artid/{$val.art_id}">
+								<div class="fl ss02"><em>■</em>{$val.art_title}</div>
+								<div class="fr ss03">{$val.art_addtime}</div>
+							</a></li>
+						</foreach>							
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="content-right">
+			<!--<div class="crt01">
+				<h4><span>专题学习</span></h4>
+				<foreach name="data19" item="val">
+					<p style="margin-top:5px ;"><a href="/index.php/Home/Article/Details/artid/{$val.art_id}" style="color: black;">★{$val.art_title}</a></p>
+				</foreach>	
+			</div>-->
+
+			<div class="crt01">
+				<h4><span>专题学习</span></h4>
+				<a href=""><img src="__IMAGES__crt02.jpg" alt=""></a>
+				<a href=""><img src="__IMAGES__crt02.jpg" alt=""></a>
+				<a href=""><img src="__IMAGES__crt02.jpg" alt=""></a>
+			</div>
+
+			
+			<div class="crt01">
+				<h4><span>报刊链接 </span></h4>
+			<p style="margin-top:5px ;"><a href="" style="color: black;">★报刊链接1</a></p>
+			<p style="margin-top:5px ;"><a href="" style="color: black;">★报刊链接2</a></p>
+			<p style="margin-top:5px ;"><a href="" style="color: black;">★报刊链接3</a></p>
+			<p style="margin-top:5px ;"><a href="" style="color: black;">★报刊链接4</a></p>
+
+			</div>
+
+			<div class="crt01" style="margin-top: 25px;">
+				<h4><span>通知公告</span></h4>
+				<foreach name="data11" item="val">
+			<p style="margin-top:5px ;"><a href="/index.php/Home/Article/Details/artid/{$val.art_id}" style="color: black;">★{$val.art_title}</a></p>
+				</foreach>	
+				
+		
+			</div>
+			<div class="crt03">
+				<h4><span>训练视频</span></h4>
+				<!--<video width="320" height="240" controls autoplay>
+                   <source src="__SOURCE__demo.mp4" type="video/mp4">
+								</video>-->
+				<!--<video width="320" height="240" controls>
+				  <source src="__SOURCE__demo.mp4" type="video/mp4">
+				  <object data="__SOURCE__demo.mp4" width="320" height="240">
+				  </object> 
+				</video>				-->
+			<!--<img src="__IMAGES__crt03.png" alt="">-->
+<div id="video" style="width:235px;height:100px;float: left;">
+<div id="a1"></div></div>
+	<script type="text/javascript" src="__JS__ckplayer.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var flashvars={
+			f:'http://movie.ks.js.cn/flv/other/1_0.flv',
+			c:0,
+			b:1
+			};
+		var params={allowFullScreen:true,allowScriptAccess:'always'};
+		CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','235','200',flashvars,params);
+		/*
+		CKobject.embedSWF(播放器路径,容器id,播放器id/name,播放器宽,播放器高,flashvars的值,其它定义也可省略);
+		下面三行是调用html5播放器用到的
+		*/
+		var video=['/monkey.mp4->video/mp4'];
+		var support=['iPad','iPhone','ios','android+false','msie10+false','webKit'];
+		CKobject.embedHTML5('video','ckplayer_a1',230,180,video,flashvars,support);
+	  </script>
+		</div>
+		<div style="clear: both;"></div>
+		    <div class="crt04" >
+				<h4><span>其他栏目</span></h4>
+				<div><span class="scrt01"></span><span class="scrt02"><a href="/index.php/Home/Communicate/Lead_mailbox" style="color: #64c085;">首长信箱</a></span></div>
+				<div><span class="scrt03"></span><span class="scrt02"><a href="/index.php/Home/Communicate/jiwei" style="color: #64c085;">纪委信箱</a></span></div>
+				<!--<div><span class="scrt04"></span><span class="scrt02"><a href="/index.php/Home/Communicate/complaint" style="color: #64c085;">投诉举报</a></span></div>-->
+				<div><span class="scrt05"></span><span class="scrt02"><a href="/index.php/Home/Communicate/suggest" style="color: #64c085;">建议献策</a></span></div>
+		     </div>
+	</div>
+
+</div>
+
+
+
+
+<div id="footer">
+	<div class="footer">
+		<p><a>|人民网</a> <a>|新华网</a><a> |中国网</a><a> | 央视</a><a>|国际</a>  <a>| 中国日</a>报国际在线<a> | 中青网</a><a>| 中国经济网 </a><a>| 光明日报<a> |中华新闻传媒网<a> | 中新网<a> | 新浪网<a> | 环球网<a> | 搜狐网<a> | 中青在线 
+|中国长城网</a><a>| 中国评论通讯社</a> <a>| 全军考试中心 </a><a>| 科技日报</a> <a>| 法制日报</a> <a>| 猫扑网</a> <a>| 中国网络媒体论坛</a><a> | 华夏经纬</a><a> | 海峡之声网</a><a>中国政府网</a><a> | 中央党校学习时报</a><a>
+中国公众科技网</a> <a>|河北国防教育网 </a><a>| 东方网</a><a> | 南方网<a/><a> | 千龙网</a> <a>| 新桂网</a><a> | 中国广播网</a> <a>| 人民公安报</a><a> | 中国台湾网 </a><a>| 工人日报</a> <a>| 农民日报</a><a> | 中国联通</a><a> | TOM</a></p>
+	</div>
+</div>
+
+</body>
+</html>

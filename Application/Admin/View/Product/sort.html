@@ -1,0 +1,308 @@
+<include file="Common/header" />
+<!--文章添加-->
+<div class="rightfix">
+  <a class="home1"></a><a class="home_pass">产品管理</a><a href="{:U('/Admin/Product/index')}" class="home_pass">产品列表</a><a class="home_now">产品分类</a>
+  <div class="clear"></div>
+	  <div class="article_type_containners">
+		  <form action="{:U('/Admin/Product/cateDelete')}" method="post">
+		  	<div class="article_type">
+		  		<div class="article_head">
+		  			<div class="head_col1 f"><input type="checkbox" class="allchoose"/><label class="allchoose_text">全选</label></div>
+		  			<div class="head_col2 f"><label class="top_title">标题</label></div>
+		  			<div class="head_col3 f"><label class="top_title">移动</label></div>
+		  			<div class="head_col4 f"><label class="top_title">操作</label></div>
+		  		</div>
+		  		<foreach name="cate" item="val" >
+			  		<div class="article_conn">
+				  		<div class="aticle_content">
+				  			<div class="content_col1 f"><input type="checkbox" class="choose_zi" name="idarr[{$val['cate_id']}]"/></div>
+				  			<div class="content_col2 f"><input type="button" value="" class="fold" placeholder=""/><input type="text" class="edit_text" value="{$val.cate_name}" /></div>
+				  			<div class="content_col3 f"><input type="hidden" name="cate_pid" value="{$val.cate_id}"><div class="mov_rang mov_top"></div><div class="mov_rang mov_s"></div><div class="mov_rang mov_x"></div><div class="mov_rang mov_bottom"></div></div>
+				  			<div class="content_col4 f"><p class="operation"><span class="hid">显示</span>/<span class="edit">编辑</span>/<a href="{:U('/Admin/Product/classDel',array('cate_id'=>$val['cate_id']))}">删除</a></p></div>
+				  			<div class="clear"></div>
+				  		</div>
+
+				  		<div class="aticle_zi_container">
+					  		<if condition="$val.sid neq false">
+					  			<foreach name="val.sid" item="v">
+					  			<div class="aticle_content_zi1">
+					  				<div class="content_col1 f"></div>
+					  				<div class="content_col2 f"><input class="second_edit_text" value="{$v.cate_name}"></div>
+					  				<div class="content_col3 f"><input type="hidden" name="cate" value="{$v.cate_id}"></div>
+					  				<div class="content_col4 f"><p class="operation"><span class="edit">编辑</span>/<a class="delet" href="{:U('/Admin/Product/classDel',array('cate_id'=>$v['cate_id']))}">删除</a></p></div>
+					  				<div class="clear"></div>	
+					  			</div>
+					  			</foreach>
+					  		</if>
+					  		<div class="aticle_content_zi">
+					  			<div class="content_col1 f"></div>
+					  			<div class="content_col2 f"><div class="second_rang_container"><div class="direction f"></div><input type="button" class="second_rang f" value=""/></div></div>
+					  			<div class="content_col3 f"></div>
+					  			<div class="content_col4 f"></div>
+					  			<div class="clear"></div>
+					  		</div>
+				  		</div>
+			  		</div>
+		  		</foreach>
+		  	</div>
+		  	<div class="shanchu_all">
+		  		<div ><input type="submit" class="delet_choose f" value="删除所选"></div>
+		  		<div class="chuanjian f"></div>
+		  		<p class="fold_container"><label class="zhankai">展开</label>|<label class="shouqi">收起</label></p>
+		  	</div>
+		  	<div class="clear chongdang"></div>
+		  </form>
+	  </div>
+  	<div class="clear"></div>
+	<!-- 权限判断 -->
+    <input type="hidden" name="power" value="{$current_admin.admin_power}">
+</div>
+<script type="text/javascript">
+	var adm_power = $("input[name='power']").val();
+    if(adm_power.indexOf('产品分类') === -1){
+    	$('.edit,.mov_rang,.chuanjian,.edit_text,.second_edit_text,.second_rang').addClass('friendShip1_notice_block show_block');
+    	$('.delet_choose').addClass('friendShip1_notice_block show_block').attr('type','button');
+    	$('.delet').addClass('friendShip1_notice_block show_block').attr('href','javascript:;');
+	}else{
+		$('.mov_rang').click(function(){
+		setTimeout(function(){
+			var order = [];
+			$('.article_type .content_col2 .edit_text').each(function(){
+				order.push($(this).val());
+			});
+			$.post('/Admin/Product/fir_order',{'order':order},function(data){
+				if(data.cateOrder){
+					return true;
+				}
+			},'json')
+		},500)
+	})
+	$('.second_edit_text,.edit_text').blur(function(){
+		var sec_class = $(this).val();
+		var cate = $(this).parent().siblings('.content_col3').find('input').val();
+		console.log(cate);
+		$.post('/Admin/Product/classification',{'class':sec_class,'cate':cate},function(data){
+			if(data.res){
+				return true;
+			}
+		},'json')
+	})
+
+	$(function(){
+		//显示和隐藏的控制调用
+		fold_s_r();
+		hid_apear();
+		//文本文字消失的调用
+		//删除
+		delet();
+		//编辑
+		zhankai_hid();
+		allchoos();
+		add_yiji();
+		child_delet();
+		add_second_rank();
+		move_to_xia();
+		move_to_shang();
+		move_to_top();
+		move_to_bottom();
+		position_button();
+	})
+	//按钮显示和隐藏的控制方法
+	function fold_s_r(){
+		$(".fold").click(function(){
+			var zi=$(".aticle_zi_container");
+			if(!zi.is(":animated")){
+			var hid_text=$(this).parents(".aticle_content").children().children().children(".hid").text();
+			if(hid_text=="显示"){
+				$(this).parents(".aticle_content").children().children().children(".hid").text("隐藏");
+				$(this).css("background","url(__IMAGES__unfold.png)");
+			}else{
+				$(this).parents(".aticle_content").children().children().children(".hid").text("显示");
+				$(this).css("background","url(__IMAGES__fold.png)");
+			}
+		 $(this).parents(".aticle_content").next(".aticle_zi_container").slideToggle();
+		 }
+		})
+	}
+	//显示和隐藏文字的控制方法
+	function hid_apear(){
+		$(".hid").click(function(){
+			var zi=$(".aticle_zi_container");
+			if(!zi.is(":animated")){
+		 var tex=$(this).html();
+		 if(tex=="显示"){
+		 		$(this).html("隐藏");
+		 		$(this).parents(".aticle_content").children().children(".fold").css("background","url(__IMAGES__unfold.png)");
+		 }else{
+		 		$(this).html("显示");
+		 		$(this).parents(".aticle_content").children().children(".fold").css("background","url(__IMAGES__fold.png)");
+		 }
+		 $(this).parent().parent().parent().next(".aticle_zi_container").slideToggle();
+		 }
+		})
+	}
+	//获取焦点文字消失的方法
+
+	function delet(){
+		$(".aticle_content .delet").click(function(){
+			$(this).parents(".article_conn").remove().next().remove();
+			position_button();
+		})
+	}
+	//文板框的编辑功能
+	//张开和收起
+	function zhankai_hid(){
+		$(".zhankai").click(function(){
+			$(".aticle_content").slideDown();
+		})
+		$(".shouqi").click(function(){
+			$(".aticle_content").slideUp();
+			$(".aticle_zi_container").slideUp();
+			$(".hid").text("显示");
+		});
+	}
+//全选
+var panduan=true;
+function allchoos(){
+	$(".allchoose").click(function(){    
+	    if(this.checked){
+			$(".article_type :checkbox").each(function(){
+				this.checked=true;
+			});
+		}else{
+			$(".article_type :checkbox").each(function(){
+				this.checked=false;
+			});
+		}
+	});
+}
+//删除选中
+// function delete_choose(){
+// 	$(".delet_choose").click(function(){
+// 	$(".choose_zi").each(function(index,element){
+// 		if($(element).is(":checked")){
+// 			$(element).parents(".article_conn").remove();
+// 		};
+// 	})
+// 	position_button();
+// 	})
+// }
+//添加一级分类
+function add_yiji(){
+	$(".chuanjian").click(function(){
+		$(".article_type").append('<div class="article_conn"><div class="aticle_content"><div class="content_col1 f"><input class="choose_zi" type="checkbox" name="idarr[{$val['cate_id']}]""/></div><div class="content_col2 f"><form method="post" action="/Admin/Product/fir_class"><input type="button" value="" class="fold" placeholder=""/><input type="text" name="fir_class" class="edit_text"/><input type="submit" value="确认" class="queren1"></form></div><div class="content_col3 f"><div class="mov_rang mov_top"></div><div class="mov_rang mov_s"></div><div class="mov_rang mov_x"></div><div class="mov_rang mov_bottom"></div></div><div class="content_col4 f"><p class="operation"><span class="hid">显示</span>/<span class="edit">编辑</span>/<span  class="delet">删除</span></p></div><div class="clear"></div></div><div class="aticle_zi_container"><div class="aticle_content_zi"><div class="content_col1 f"></div><div class="content_col2 f"><div class="second_rang_container"><div class="direction f"></div><input type="button" class="second_rang f" value=""/></div></div><div class="content_col3 f"></div><div class="content_col4 f"></div><div class="clear"></div></div></div></div>');
+		diaoyong();
+	})
+}
+function diaoyong(){
+	add_second_rank();
+	fold_s_r();
+	hid_apear();
+	delet();
+	zhankai_hid();
+	allchoos(); 
+	delete_choose();
+	child_delet();
+		move_to_xia();
+	move_to_shang();
+	move_to_top();
+	move_to_bottom();
+	position_button();
+	
+}
+//向下移动
+function move_to_xia(){
+	$(".mov_x").click(function(){
+		position_button();
+		var num=$(this).parents(".article_conn").index(".article_conn");
+		var obj_onw=$(this).parents(".article_conn");
+		num++;
+		var obj=$(".article_conn");
+		if(num<=$(".article_conn").length){
+			obj.eq(num).after(obj_onw);
+			position_button();
+			preventDefault();
+		}
+	})
+}
+function move_to_shang(){
+	$(".mov_s").click(function(){
+		position_button();
+		var num=$(this).parents(".article_conn").index(".article_conn");
+		var obj_onw=$(this).parents(".article_conn");
+		num--;
+		var obj=$(".article_conn");
+		if(num>=0){
+		obj.eq(num).before(obj_onw);
+		position_button();
+		preventDefault();
+		}
+	})
+}
+function move_to_top(){
+	$(".mov_top").click(function(){
+		var obj_onw=$(this).parents(".article_conn");
+		var obj=$(".article_conn");
+		obj.eq(0).before(obj_onw);
+		position_button();
+	})
+}
+function move_to_bottom(){
+	$(".mov_bottom").click(function(){
+		var obj_onw=$(this).parents(".article_conn");
+		var obj=$(".article_conn");
+		var l=$(".obj").length;
+		obj.eq(l-1).after(obj_onw);
+		position_button();
+	})
+}
+function child_delet(){
+	$(".aticle_zi_container .delet").click(function(){
+		$(this).parents(".aticle_content_zi1").remove();
+	})
+}
+//添加二级
+function add_second_rank(){
+	$(".second_rang").click(function(){
+		var cate_pid = $(this).parents('.article_conn').find("input[name='cate_pid']").val();
+		$(this).parents(".aticle_zi_container").append('<div class="aticle_content_zi1"><div class="content_col1 f"></div><form method="post"><div class="content_col2 f"><input class="second_edit_text" name="sec_class"><input type="hidden" name="cate_pid" value='+cate_pid+'><input type="submit" value="确认" class="queren1"></div></form><div class="content_col3 f"></div><div class="content_col4 f"><p class="operation"><span class="edit">编辑</span>/<span  class="delet">删除</span></p></div><div class="clear"></div></div>');
+		var obj1=$(this).parents(".aticle_content_zi").next(".aticle_content_zi1");
+		var xian=$(this).parents(".aticle_content_zi");
+		xian.before(obj1);
+		child_delet();
+	})
+}
+function position_button(){
+	$(".article_conn").each(function(index,element){
+		var local_obj=$(element);
+		var i=local_obj.index();
+		var l=$(".article_conn").length;
+		if(i==1){
+			$(element).children().children(".content_col3").children(".mov_top").css("background","url(__IMAGES__mov_to_head_unedit.png)")
+			$(element).children().children(".content_col3").children(".mov_bottom").css("background","url(__IMAGES__move_to_last.png)");
+			$(element).children().children(".content_col3").children(".mov_s").css("background","url(__IMAGES__mov_to_prev_unedit.png)");
+			$(element).children().children(".content_col3").children(".mov_x").css("background","url(__IMAGES__mov_top_next.png)");
+		}
+		if(i==l){
+			$(element).children().children(".content_col3").children(".mov_top").css("background","url(__IMAGES__mov_to_head.png)")
+			$(element).children().children(".content_col3").children(".mov_bottom").css("background","url(__IMAGES__mov_to_last_unedit.png)");
+			$(element).children().children(".content_col3").children(".mov_s").css("background","url(__IMAGES__mov_to_prev.png)");
+			$(element).children().children(".content_col3").children(".mov_x").css("background","url(__IMAGES__mov_to_next_unedit.png)");
+		}
+		if(1<i&&i<l){
+			$(element).children().children(".content_col3").children(".mov_top").css("background","url(__IMAGES__mov_to_head.png)")
+			$(element).children().children(".content_col3").children(".mov_bottom").css("background","url(__IMAGES__move_to_last.png)");
+			$(element).children().children(".content_col3").children(".mov_s").css("background","url(__IMAGES__mov_to_prev.png)");
+			$(element).children().children(".content_col3").children(".mov_x").css("background","url(__IMAGES__mov_top_next.png)");
+		}
+	})
+}
+	}
+	
+</script>
+<div class="clear"></div>
+<div class="bottom">声明：系统开发版权归重庆艾斯顿文化传媒有限公司所有，翻版必究</div>
+
+<include file="Common/alert" />
+</body>
+</html>
